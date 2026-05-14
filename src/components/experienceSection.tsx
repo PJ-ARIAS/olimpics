@@ -19,14 +19,14 @@ import {
 import { cn } from "../../lib/utils";
 
 // Imágenes
-import vlch from "../../images/lesArts.jpg";
-import gbeach from "../../images/beach.jpg";
-import gpub from "../../images/pub.jpg";
-import tapas from "../../images/tapas.jpg";
-import bike from "../../images/bike.jpg";
-import tuk from "../../images/tuk.jpg";
-import cata from "../../images/catamaran.jpg";
-import night from "../../images/night.jpg";
+import vlch from "../../images/valtour.png";
+import gbeach from "../../images/xabia.png";
+import gpub from "../../images/gpub.png";
+import tapas from "../../images/pug.png";
+import bike from "../../images/biketourgood.jpeg";
+import tuk from "../../images/tuktukgood.png";
+import cata from "../../images/catamarangood.png";
+import night from "../../images/cabanal.png";
 
 interface Experience {
   title: string;
@@ -126,7 +126,7 @@ export function ExperiencesSection() {
     if (!emblaApi) return;
   }, [emblaApi]);
 
-  // Componente Reutilizable para la Card (Móvil y Desktop)
+  // Componente Reutilizable para la Card
   const ExperienceCard = ({
     exp,
     className,
@@ -136,23 +136,27 @@ export function ExperiencesSection() {
   }) => (
     <div
       className={cn(
-        "group relative overflow-hidden rounded-3xl border border-border transition-all duration-500 shadow-md",
+        "group relative overflow-hidden rounded-3xl border border-border bg-zinc-950 transition-all duration-500 shadow-md",
         className,
       )}
     >
       <img
         src={exp.image}
         alt={exp.title}
-        className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+        className="absolute inset-0 h-full w-full object-contain p-2 transition-transform duration-700 group-hover:scale-105"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-100 group-hover:opacity-0 transition-opacity duration-500" />
 
+      {/* Overlay sutil para no interferir con la imagen completa */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-100 group-hover:opacity-0 transition-opacity duration-500" />
+
+      {/* Título visible por defecto */}
       <div className="absolute bottom-6 left-6 right-6 transition-all duration-500 group-hover:translate-y-10 group-hover:opacity-0">
         <h3 className="text-xl font-bold text-white uppercase tracking-tight drop-shadow-2xl">
           {exp.title}
         </h3>
       </div>
 
+      {/* Información al hacer Hover */}
       <div className="absolute inset-0 bg-primary/95 p-8 flex flex-col justify-end translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out">
         <div className="flex items-center justify-between mb-4">
           <div className="p-2 bg-white/20 rounded-lg">
@@ -165,7 +169,7 @@ export function ExperiencesSection() {
         <h3 className="text-xl font-bold text-white mb-2 uppercase leading-tight">
           {exp.title}
         </h3>
-        <p className="text-white/90 text-sm mb-4 line-clamp-3 leading-relaxed">
+        <p className="text-white/90 text-sm mb-4 line-clamp-4 leading-relaxed">
           {exp.description}
         </p>
         <div className="mt-auto self-start bg-white text-primary text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-tighter">
@@ -178,6 +182,7 @@ export function ExperiencesSection() {
   return (
     <section id="experiences" className="py-24 bg-card">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
         <div className="text-center mb-16">
           <span className="text-primary font-bold text-sm uppercase tracking-[0.3em]">
             Available Experiences
@@ -222,14 +227,17 @@ export function ExperiencesSection() {
 
         {/* DESKTOP BENTO GRID */}
         <div className="hidden md:grid grid-cols-4 gap-4 auto-rows-[300px]">
+          {/* Card Grande Vertical */}
           <ExperienceCard
             exp={experiences[0]}
             className="md:col-span-2 md:row-span-2"
           />
+          {/* Card Ancha */}
           <ExperienceCard
             exp={experiences[1]}
             className="md:col-span-2 md:row-span-1"
           />
+          {/* Cards Cuadradas */}
           <ExperienceCard
             exp={experiences[2]}
             className="md:col-span-1 md:row-span-1"
@@ -246,12 +254,14 @@ export function ExperiencesSection() {
             exp={experiences[5]}
             className="md:col-span-1 md:row-span-1"
           />
+          {/* Card Ancha Final */}
           <ExperienceCard
             exp={experiences[6]}
             className="md:col-span-2 md:row-span-1"
           />
         </div>
 
+        {/* Footer Note */}
         <div className="mt-16 text-center">
           <p className="text-muted-foreground text-sm">
             Can't find what you're looking for?{" "}

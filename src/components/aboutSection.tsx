@@ -109,18 +109,33 @@ export function AboutSection() {
           </div>
 
           {/* All Packages Include - Full Width */}
-          <div className="lg:col-span-3 bg-card-foreground rounded-2xl p-8 border border-border">
+          <div className="lg:col-span-3 bg-card-foreground rounded-2xl p-6 md:p-8 border border-border">
             <h3 className="text-xl font-bold text-muted mb-6 text-center">
               All the packs include
             </h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
+
+            {/* 
+      CAMBIOS CLAVE:
+      1. grid-cols-1 por defecto (móvil pequeño).
+      2. sm:grid-cols-2 para móviles medianos/grandes.
+      3. lg:grid-cols-3 para escritorio.
+  */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {benefits.map((benefit) => (
                 <div
                   key={benefit}
-                  className="flex items-start gap-3 p-3 bg-muted-foreground/50 rounded-xl"
+                  className="flex items-start gap-3 p-3 bg-muted-foreground/50 rounded-xl transition-colors hover:bg-muted-foreground/60"
                 >
+                  {/* flex-shrink-0 asegura que el check no se aplaste si el texto es largo */}
                   <Check className="w-5 h-5 text-muted flex-shrink-0 mt-0.5" />
-                  <span className="text-sm text-foreground">{benefit}</span>
+
+                  {/* 
+            text-sm y leading-tight ayudan a que textos largos 
+            no rompan la armonía visual 
+        */}
+                  <span className="text-sm text-foreground leading-snug">
+                    {benefit}
+                  </span>
                 </div>
               ))}
             </div>

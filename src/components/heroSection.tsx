@@ -1,12 +1,21 @@
 import { Button } from "./ui/button";
-import { ArrowRight, MapPin, Heart, Compass } from "lucide-react";
-import ggoli from "../../images/gaygamesLogo.png";
+import {
+  ArrowRight,
+  Volleyball,
+  Heart,
+  Compass,
+  Beer,
+  MapPinned,
+} from "lucide-react";
+// import ggoli from "../../images/gaygamesLogo.png";
 
 export function HeroSection() {
   const features = [
-    { icon: MapPin, text: "Beaches" },
-    { icon: Heart, text: "Night life" },
+    { icon: Volleyball, text: "Beaches" },
+    { icon: Beer, text: "Night life" },
     { icon: Compass, text: "Gastronomy" },
+    { icon: Heart, text: "Mediterranean Lifestyle" },
+    { icon: MapPinned, text: "Authentic Local Experiences" },
   ];
 
   return (
@@ -28,9 +37,9 @@ export function HeroSection() {
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-muted-foreground/20 border border-primary/30 mb-8 mt-10">
+        {/* <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-muted-foreground/20 border border-primary/30 mb-8 mt-10">
           <img src={ggoli} alt="" className="h-30" />
-        </div>
+        </div> */}
 
         {/* Main heading */}
         <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-foreground mb-6 leading-tight text-balance">
@@ -62,7 +71,7 @@ export function HeroSection() {
               </span>
             </div>
           ))}
-          <div className="flex items-center gap-2 text-muted-foreground">
+          {/* <div className="flex items-center gap-2 text-muted-foreground">
             <span className="text-md text-foreground font-medium">
               Mediterranean Lifestyle
             </span>
@@ -71,7 +80,7 @@ export function HeroSection() {
             <span className="text-md text-foreground font-medium">
               Authentic Local Experiences
             </span>
-          </div>
+          </div> */}
         </div>
 
         {/* CTA Buttons */}
