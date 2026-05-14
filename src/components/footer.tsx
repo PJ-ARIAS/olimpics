@@ -1,4 +1,4 @@
-import { MapPin, Mail, Phone, Instagram, Facebook } from "lucide-react";
+import { MapPin, Mail } from "lucide-react";
 import logo from "../../images/logo1.png";
 
 export function Footer() {
