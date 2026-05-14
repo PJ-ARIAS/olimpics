@@ -14,7 +14,7 @@ export function Header() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-card-foreground/80 backdrop-blur-md border-b border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Eliminamos h-16 y añadimos py-2 o py-4 para que el alto sea dinámico */}
         <div className="flex items-center justify-between py-3 md:py-4">

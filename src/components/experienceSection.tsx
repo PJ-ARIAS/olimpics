@@ -196,7 +196,7 @@ export function ExperiencesSection() {
           {experiences.map((exp, index) => (
             <div
               key={exp.title}
-              className={`group bg-secondary rounded-2xl p-6 border border-border hover:border-muted/90 transition-all hover:shadow-lg ${
+              className={`group bg-card-foreground rounded-2xl p-6 border border-border hover:border-muted/90 transition-all hover:shadow-lg ${
                 index === 0 || index === 1 ? "lg:col-span-2" : ""
               }`}
             >

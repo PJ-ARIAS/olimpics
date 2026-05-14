@@ -40,7 +40,7 @@ export function AboutSection() {
         {/* Bento Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* Our Role Card - Large */}
-          <div className="lg:col-span-2 bg-secondary rounded-2xl p-8 border border-border">
+          <div className="lg:col-span-2 bg-card-foreground rounded-2xl p-8 border border-border">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-12 rounded-xl bg-muted flex items-center justify-center">
                 <Users className="w-6 h-6 text-card" />
@@ -50,30 +50,28 @@ export function AboutSection() {
               </h3>
             </div>
             <div className="grid sm:grid-cols-3 gap-6">
-              <div className="text-center p-4 bg-background/50 rounded-xl">
-                <Compass className="w-8 h-8 text-primary mx-auto mb-3" />
-                <h4 className="font-semibold text-foreground mb-1">
-                  Local Hosts
-                </h4>
-                <p className="text-sm text-muted-foreground">
+              <div className="text-center p-4 bg-muted-foreground/60 rounded-xl">
+                <Compass className="w-8 h-8 text-muted mx-auto mb-3" />
+                <h4 className="font-semibold text-muted mb-1">Local Hosts</h4>
+                <p className="text-sm text-foreground">
                   Local connection to Valencia
                 </p>
               </div>
-              <div className="text-center p-4 bg-background/50 rounded-xl">
-                <Coffee className="w-8 h-8 text-accent mx-auto mb-3" />
-                <h4 className="font-semibold text-foreground mb-1">
+              <div className="text-center p-4 bg-muted-foreground/60 rounded-xl">
+                <Coffee className="w-8 h-8 text-muted mx-auto mb-3" />
+                <h4 className="font-semibold text-muted mb-1">
                   Lifestyle Guides
                 </h4>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-sm text-foreground">
                   Mediterranean style guides
                 </p>
               </div>
-              <div className="text-center p-4 bg-background/50 rounded-xl">
-                <Users className="w-8 h-8 text-primary mx-auto mb-3" />
-                <h4 className="font-semibold text-foreground mb-1">
+              <div className="text-center p-4 bg-muted-foreground/60 rounded-xl">
+                <Users className="w-8 h-8 text-muted mx-auto mb-3" />
+                <h4 className="font-semibold text-muted mb-1">
                   Insider Connection
                 </h4>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-sm text-foreground">
                   Access to the Authentic
                 </p>
               </div>
@@ -81,7 +79,7 @@ export function AboutSection() {
           </div>
 
           {/* Meeting Point Card */}
-          <div className="bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl p-8 border border-primary/30">
+          <div className="bg-muted-foreground/60 rounded-2xl p-8 border border-primary/30">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-12 h-12 rounded-xl bg-muted flex items-center justify-center">
                 <MapPin className="w-6 h-6 text-card" />
@@ -93,7 +91,7 @@ export function AboutSection() {
             <p className="text-muted font-semibold mb-4">
               El Carmen Historic Center
             </p>
-            <p className="text-sm text-muted-foreground mb-4">
+            <p className="text-sm text-foreground mb-4">
               Our office in El Carmen becomes the official TBOV meeting point
               during the Gay Games.
             </p>
@@ -101,9 +99,9 @@ export function AboutSection() {
               {meetingPointFeatures.map((feature) => (
                 <li
                   key={feature}
-                  className="flex items-center gap-2 text-sm text-muted-foreground"
+                  className="flex items-center gap-2 text-sm text-foreground"
                 >
-                  <Check className="w-4 h-4 text-accent flex-shrink-0" />
+                  <Check className="w-4 h-4 text-muted flex-shrink-0" />
                   {feature}
                 </li>
               ))}
@@ -111,15 +109,15 @@ export function AboutSection() {
           </div>
 
           {/* All Packages Include - Full Width */}
-          <div className="lg:col-span-3 bg-secondary rounded-2xl p-8 border border-border">
-            <h3 className="text-xl font-bold text-foreground mb-6 text-center">
+          <div className="lg:col-span-3 bg-card-foreground rounded-2xl p-8 border border-border">
+            <h3 className="text-xl font-bold text-muted mb-6 text-center">
               All the packs include
             </h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
               {benefits.map((benefit) => (
                 <div
                   key={benefit}
-                  className="flex items-start gap-3 p-3 bg-background/50 rounded-xl"
+                  className="flex items-start gap-3 p-3 bg-muted-foreground/50 rounded-xl"
                 >
                   <Check className="w-5 h-5 text-muted flex-shrink-0 mt-0.5" />
                   <span className="text-sm text-foreground">{benefit}</span>

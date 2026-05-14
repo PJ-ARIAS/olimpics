@@ -32,7 +32,7 @@ export function HowItWorksSection() {
   ];
 
   return (
-    <section className="py-24 bg-background">
+    <section className="py-24 bg-card-foreground">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -40,7 +40,7 @@ export function HowItWorksSection() {
             How It Works
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mt-2 mb-4">
-            Cómo Reservar
+            How it works
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Simple process to secure your Mediterranean experience during the
@@ -78,11 +78,11 @@ export function HowItWorksSection() {
         </div>
 
         {/* Urgency Banner */}
-        <div className="mt-16 bg-gradient-to-r from-muted/20 via-accent/20 to-muted/20 rounded-2xl p-8 text-center border border-primary/30">
-          <p className="text-lg text-foreground font-semibold mb-2">
+        <div className="mt-16 bg-muted-foreground rounded-2xl p-8 text-center border border-primary/30">
+          <p className="text-lg text-card font-semibold mb-2">
             Limited availability during the Gay Games period
           </p>
-          <p className="text-muted-foreground">
+          <p className="text-card">
             Book early to secure your experiences. Mediterranean Lifestyle -
             Beaches - Nightlife - Gastronomy - Local Connections
           </p>

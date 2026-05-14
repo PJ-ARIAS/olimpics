@@ -6,7 +6,7 @@ export function PackagesSection() {
     {
       name: "Package A",
       subtitle: "Basic Experience Package",
-      price: "950",
+      price: "950€",
       experiences: 3,
       description:
         "Valencia Historic & Lifestyle Tour + Choose 2 additional experiences",
@@ -17,7 +17,7 @@ export function PackagesSection() {
     {
       name: "Package B",
       subtitle: "Mediterranean Experience Package",
-      price: "1,200",
+      price: "1,200€",
       experiences: 4,
       description:
         "Valencia Historic & Lifestyle Tour + Choose 3 additional experiences",
@@ -32,7 +32,7 @@ export function PackagesSection() {
     {
       name: "Package C",
       subtitle: "Full Gay Games Experience",
-      price: "1,500",
+      price: "1,500€",
       experiences: 5,
       description:
         "Valencia Historic & Lifestyle Tour + Choose 4 additional experiences",
@@ -45,7 +45,7 @@ export function PackagesSection() {
   ];
 
   return (
-    <section id="packages" className="py-24 bg-background">
+    <section id="packages" className="py-24 bg-card-foreground">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -114,7 +114,7 @@ export function PackagesSection() {
                 {pkg.description}
               </p>
 
-              <div className="space-y-3 mb-8">
+              {/* <div className="space-y-3 mb-8">
                 <p className="text-sm font-semibold text-foreground">
                   Perfect for:
                 </p>
@@ -126,11 +126,11 @@ export function PackagesSection() {
                     </span>
                   </div>
                 ))}
-              </div>
+              </div> */}
 
               <Button
                 asChild
-                className={`w-full ${pkg.popular ? "bg-primary hover:bg-muted/80 hover:text-foreground" : "bg-secondary hover:text-foreground hover:bg-muted/80"}`}
+                className={`w-full ${pkg.popular ? "bg-muted text-card hover:bg-secondary hover:text-accent" : "hover:bg-secondary hover:text-accent text-card bg-muted/80"}`}
               >
                 <a href="#contact">Seleccionar Paquete</a>
               </Button>
@@ -139,31 +139,31 @@ export function PackagesSection() {
         </div>
 
         {/* Premium Add-on */}
-        <div className="bg-gradient-to-r from-accent/20 via-primary/20 to-accent/20 rounded-2xl p-8 border border-accent/30">
+        <div className="bg-muted-foreground rounded-2xl p-8 border border-accent/30">
           <div className="flex flex-col lg:flex-row items-center gap-8">
             <div className="flex-1">
-              <span className="inline-block px-3 py-1 bg-accent/20 text-accent text-sm font-semibold rounded-full mb-4">
+              <span className="inline-block px-3 py-1 bg-muted text-card text-sm font-semibold rounded-full mb-4">
                 Premium Add-On
               </span>
-              <h3 className="text-2xl font-bold text-foreground mb-2">
+              <h3 className="text-2xl font-bold text-card mb-2">
                 Premium Xàbia Mediterranean Escape
               </h3>
-              <p className="text-muted-foreground mb-4">
+              <p className="text-card mb-4">
                 Full Day Experience - 6 July. Travel to Dénia and Xàbia during a
                 scenic Mediterranean route to discover spectacular beaches,
                 hidden coves, crystal-clear water, and incredible landscapes.
               </p>
               <div className="flex items-baseline gap-2">
                 <span className="text-3xl font-bold text-foreground">
-                  From 500
+                  From 500€
                 </span>
-                <span className="text-muted-foreground">per person</span>
+                <span className="text-card font-bold">per person</span>
               </div>
             </div>
             <Button
               asChild
               size="lg"
-              className="bg-accent hover:bg-accent/90 text-accent-foreground"
+              className="bg-muted hover:bg-secondary hover:text-accent text-card"
             >
               <a href="#contact">Añadir a Mi Paquete</a>
             </Button>
@@ -173,8 +173,8 @@ export function PackagesSection() {
         {/* Accommodation Section */}
         <div className="mt-12 bg-card rounded-2xl p-8 border border-border">
           <div className="flex items-start gap-4 mb-6">
-            <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center">
-              <Building className="w-6 h-6 text-primary" />
+            <div className="w-12 h-12 rounded-xl bg-muted flex items-center justify-center">
+              <Building className="w-6 h-6 text-card" />
             </div>
             <div>
               <h3 className="text-xl font-bold text-foreground">
@@ -196,20 +196,20 @@ export function PackagesSection() {
             ].map((type) => (
               <div
                 key={type}
-                className="flex items-center gap-2 text-sm text-muted-foreground"
+                className="flex items-center gap-2 text-lg text-foreground"
               >
                 <Check className="w-4 h-4 text-primary" />
                 {type}
               </div>
             ))}
           </div>
-          <div className="bg-secondary/50 rounded-xl p-4 inline-block">
-            <p className="text-sm text-muted-foreground">
+          <div className="bg-muted-foreground/50 rounded-xl p-4 inline-block">
+            <p className="text-sm text-muted">
               Average rates during Gay Games:
             </p>
             <p className="text-xl font-bold text-foreground">
-              150 - 250{" "}
-              <span className="text-sm font-normal text-muted-foreground">
+              150€ - 250€{" "}
+              <span className="text-sm font-semibold text-foreground">
                 per night (double room)
               </span>
             </p>

@@ -1,5 +1,6 @@
 import { Button } from "./ui/button";
 import { ArrowRight, MapPin, Heart, Compass } from "lucide-react";
+import ggoli from "../../images/gaygamesLogo.png";
 
 export function HeroSection() {
   const features = [
@@ -13,7 +14,7 @@ export function HeroSection() {
       {/* Background */}
       <div className="absolute inset-0">
         <img
-          src="/images/valencia-games.jpg"
+          src="../../images/valencia-games.jpg"
           alt="Ciudad de las Artes y las Ciencias de Valencia"
           className="w-full h-full object-cover"
         />
@@ -27,10 +28,8 @@ export function HeroSection() {
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/20 border border-primary/30 mb-8">
-          <span className="text-sm font-medium text-primary">
-            Gay Games Valencia 2026
-          </span>
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-muted-foreground/20 border border-primary/30 mb-8 mt-10">
+          <img src={ggoli} alt="" className="h-30" />
         </div>
 
         {/* Main heading */}
@@ -45,7 +44,7 @@ export function HeroSection() {
             Discover Valencia Beyond the Games
           </strong>
         </p>
-        <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto mb-8 text-pretty">
+        <p className="text-base sm:text-lg text-foreground max-w-3xl mx-auto mb-8 text-pretty">
           Spend your free time during the Games with locals. Experience Valencia
           with a local LGBTQ+ friendly team based in the heart of the city.
         </p>
@@ -57,15 +56,19 @@ export function HeroSection() {
               key={feature.text}
               className="flex items-center gap-2 text-muted-foreground"
             >
-              <feature.icon className="w-5 h-5 text-primary" />
-              <span className="text-sm font-medium">{feature.text}</span>
+              <feature.icon className="w-5 h-5 text-muted" />
+              <span className="text-md text-foreground font-medium">
+                {feature.text}
+              </span>
             </div>
           ))}
           <div className="flex items-center gap-2 text-muted-foreground">
-            <span className="text-sm font-medium">Mediterranean Lifestyle</span>
+            <span className="text-md text-foreground font-medium">
+              Mediterranean Lifestyle
+            </span>
           </div>
           <div className="flex items-center gap-2 text-muted-foreground">
-            <span className="text-sm font-medium">
+            <span className="text-md text-foreground font-medium">
               Authentic Local Experiences
             </span>
           </div>
@@ -76,7 +79,7 @@ export function HeroSection() {
           <Button
             asChild
             size="lg"
-            className="bg-muted text-secondary text-lg px-8 hover:bg-background hover:text-foreground  "
+            className="bg-muted text-secondary text-lg px-8 hover:bg-secondary hover:text-accent  "
           >
             <a href="#packages">
               Ver Paquetes
@@ -87,14 +90,14 @@ export function HeroSection() {
             asChild
             variant="outline"
             size="lg"
-            className="text-lg px-8 border-border bg-accent text-foreground hover:bg-card"
+            className="text-lg px-8 border-border bg-accent text-card hover:bg-muted/30 hover:text-muted"
           >
             <a href="#experiences">Explorar Experiencias</a>
           </Button>
         </div>
 
         {/* Tagline */}
-        <p className="mt-12 text-sm text-muted-foreground italic">
+        <p className="mt-12 text-md text-muted italic">
           {'"'}Help you experience Valencia like a local during the Gay Games.
           {'"'}
         </p>
