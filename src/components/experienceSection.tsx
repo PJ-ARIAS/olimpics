@@ -47,9 +47,6 @@ export function ExperiencesSection() {
     [autoplayRef.current],
   );
 
-  const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
-  const [nextBtnDisabled, setNextBtnDisabled] = useState(false);
-
   const experiences: Experience[] = [
     {
       title: "Valencia Historic Tour",
@@ -127,12 +124,6 @@ export function ExperiencesSection() {
 
   useEffect(() => {
     if (!emblaApi) return;
-    const onSelect = () => {
-      setPrevBtnDisabled(!emblaApi.canScrollPrev());
-      setNextBtnDisabled(!emblaApi.canScrollNext());
-    };
-    emblaApi.on("select", onSelect);
-    onSelect();
   }, [emblaApi]);
 
   // Componente Reutilizable para la Card (Móvil y Desktop)
