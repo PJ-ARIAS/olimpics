@@ -132,7 +132,7 @@ export function PackagesSection() {
                 asChild
                 className={`w-full ${pkg.popular ? "bg-muted text-card hover:bg-secondary hover:text-accent" : "hover:bg-secondary hover:text-accent text-card bg-muted/80"}`}
               >
-                <a href="#contact">Seleccionar Paquete</a>
+                <a href="#contact">Select package</a>
               </Button>
             </div>
           ))}
@@ -165,7 +165,7 @@ export function PackagesSection() {
               size="lg"
               className="bg-muted hover:bg-secondary hover:text-accent text-card"
             >
-              <a href="#contact">Añadir a Mi Paquete</a>
+              <a href="#contact">Add package</a>
             </Button>
           </div>
         </div>

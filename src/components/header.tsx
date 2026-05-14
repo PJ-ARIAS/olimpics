@@ -7,10 +7,10 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { label: "Sobre Nosotros", href: "#about" },
-    { label: "Paquetes", href: "#packages" },
-    { label: "Experiencias", href: "#experiences" },
-    { label: "Contacto", href: "#contact" },
+    { label: "About us", href: "#about" },
+    { label: "Packages", href: "#packages" },
+    { label: "Experiences", href: "#experiences" },
+    { label: "Contact", href: "#contact" },
   ];
 
   return (
@@ -47,7 +47,7 @@ export function Header() {
               asChild
               className="bg-muted hover:bg-accent text-card font-bold"
             >
-              <a href="#contact">Reservar Ahora</a>
+              <a href="#contact">Book now</a>
             </Button>
           </div>
 
@@ -81,7 +81,7 @@ export function Header() {
               className="w-full bg-primary hover:bg-primary/90 text-primary-foreground mt-2"
             >
               <a href="#contact" onClick={() => setIsMenuOpen(false)}>
-                Reservar Ahora
+                Book now
               </a>
             </Button>
           </nav>

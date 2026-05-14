@@ -155,12 +155,14 @@ export function RegistrationForm() {
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="a">
-                      Package A (Max 3 experiences)
+                      Package A (Max 2 experiences)
                     </SelectItem>
                     <SelectItem value="b">
-                      Package B (Max 5 experiences)
+                      Package B (Max 3 experiences)
                     </SelectItem>
-                    <SelectItem value="c">Package C (Full Access)</SelectItem>
+                    <SelectItem value="c">
+                      Package C (Max 4 experiences)
+                    </SelectItem>
                   </SelectContent>
                 </Select>
               </div>

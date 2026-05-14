@@ -4,9 +4,9 @@ import ggoli from "../../images/gaygamesLogo.png";
 
 export function HeroSection() {
   const features = [
-    { icon: MapPin, text: "Playas" },
-    { icon: Heart, text: "Vida Nocturna" },
-    { icon: Compass, text: "Gastronomía" },
+    { icon: MapPin, text: "Beaches" },
+    { icon: Heart, text: "Night life" },
+    { icon: Compass, text: "Gastronomy" },
   ];
 
   return (
@@ -82,7 +82,7 @@ export function HeroSection() {
             className="bg-muted text-secondary text-lg px-8 hover:bg-secondary hover:text-accent  "
           >
             <a href="#packages">
-              Ver Paquetes
+              Packages
               <ArrowRight className="ml-2 w-5 h-5" />
             </a>
           </Button>
@@ -92,7 +92,7 @@ export function HeroSection() {
             size="lg"
             className="text-lg px-8 border-border bg-accent text-card hover:bg-muted/30 hover:text-muted"
           >
-            <a href="#experiences">Explorar Experiencias</a>
+            <a href="#experiences">Check the experience</a>
           </Button>
         </div>
 

@@ -18,22 +18,7 @@ export function Footer() {
               Local LGBTQ+ Mediterranean lifestyle hosts. Your connection to
               authentic Valencia during the Gay Games 2026.
             </p>
-            <div className="flex gap-4">
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-background flex items-center justify-center text-muted hover:text-primary hover:bg-primary/10 transition-colors"
-                aria-label="Instagram"
-              >
-                <Instagram className="w-5 h-5" />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-background flex items-center justify-center text-muted hover:text-primary hover:bg-primary/10 transition-colors"
-                aria-label="Facebook"
-              >
-                <Facebook className="w-5 h-5" />
-              </a>
-            </div>
+            {/* <div className="flex gap-4"> en caso de gregar algo aca debajo del logo</div> */}
           </div>
 
           {/* Quick Links */}
@@ -43,7 +28,7 @@ export function Footer() {
               <li>
                 <a
                   href="#about"
-                  className="text-muted-foreground hover:text-primary transition-colors"
+                  className="text-muted-foreground hover:text-muted transition-colors"
                 >
                   About Us
                 </a>
@@ -51,7 +36,7 @@ export function Footer() {
               <li>
                 <a
                   href="#packages"
-                  className="text-muted-foreground hover:text-primary transition-colors"
+                  className="text-muted-foreground hover:text-muted transition-colors"
                 >
                   Packages
                 </a>
@@ -59,7 +44,7 @@ export function Footer() {
               <li>
                 <a
                   href="#experiences"
-                  className="text-muted-foreground hover:text-primary transition-colors"
+                  className="text-muted-foreground hover:text-muted transition-colors"
                 >
                   Experiences
                 </a>
@@ -67,7 +52,7 @@ export function Footer() {
               <li>
                 <a
                   href="#contact"
-                  className="text-muted-foreground hover:text-primary transition-colors"
+                  className="text-muted-foreground hover:text-muted transition-colors"
                 >
                   Contact
                 </a>
@@ -91,10 +76,6 @@ export function Footer() {
                 >
                   info@thebestofvalencia.com
                 </a>
-              </li>
-              <li className="flex items-center gap-3 text-muted-foreground">
-                <Phone className="w-5 h-5 text-muted flex-shrink-0" />
-                <span>WhatsApp Available</span>
               </li>
             </ul>
           </div>

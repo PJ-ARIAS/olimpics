@@ -5,230 +5,268 @@ import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import {
   Clock,
-  Utensils,
   Sun,
   Wine,
   Bike,
   Car,
   Sailboat,
   Moon,
+  Utensils,
   ChevronLeft,
   ChevronRight,
+  MousePointer2,
 } from "lucide-react";
+import { cn } from "../../lib/utils";
+
+// Imágenes
+import vlch from "../../images/lesArts.jpg";
+import gbeach from "../../images/beach.jpg";
+import gpub from "../../images/pub.jpg";
+import tapas from "../../images/tapas.jpg";
+import bike from "../../images/bike.jpg";
+import tuk from "../../images/tuk.jpg";
+import cata from "../../images/catamaran.jpg";
+import night from "../../images/night.jpg";
+
+interface Experience {
+  title: string;
+  duration: string;
+  icon: any;
+  image: string;
+  description: string;
+  highlight: string;
+}
 
 export function ExperiencesSection() {
   const autoplayRef = useRef(
-    Autoplay({ delay: 4000, stopOnInteraction: true }),
+    Autoplay({ delay: 4000, stopOnInteraction: false }),
   );
 
   const [emblaRef, emblaApi] = useEmblaCarousel(
-    {
-      align: "start",
-      loop: true,
-      skipSnaps: false,
-    },
+    { align: "start", loop: true, skipSnaps: false },
     [autoplayRef.current],
   );
 
   const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
   const [nextBtnDisabled, setNextBtnDisabled] = useState(false);
 
-  const prevButtonRef = useRef<HTMLButtonElement>(null);
-  const nextButtonRef = useRef<HTMLButtonElement>(null);
-
-  const experiences = [
+  const experiences: Experience[] = [
     {
-      title: "Valencia Historic & Lifestyle Tour",
+      title: "Valencia Historic Tour",
       duration: "4 Hours",
       icon: Sun,
+      image: vlch,
       description:
-        "Explore the historic center, Roman Valencia, hidden streets, and Mediterranean lifestyle areas. Ends with traditional Valencian paella lunch.",
+        "Explore the heart of the city, Roman ruins and the authentic local lifestyle.",
       highlight: "Paella included",
     },
     {
-      title: "Gay Beach Lifestyle Experience",
+      title: "Gay Beach Experience",
       duration: "5 Hours",
       icon: Sun,
+      image: gbeach,
       description:
-        "Escape to Valencia's gay beach with lunch in a typical local restaurant. Spend the afternoon surrounded by good vibes and Mediterranean lifestyle.",
-      highlight: "Transfers + Lunch included",
+        "Sun, sea and the best vibes at Valencia's famous Mediterranean gay beach.",
+      highlight: "Transfers included",
     },
     {
-      title: "LGBTQ+ Pub Crawl & Social Circuit",
-      duration: "5 Hours",
-      icon: Moon,
-      description:
-        "Explore Valencia's best LGBTQ+ nightlife in Ruzafa and El Carmen. Discover bars, hidden venues, and authentic nightlife atmosphere.",
-      highlight: "Optional: Late-night disco +50",
-    },
-    {
-      title: "Tapas & Wine Experience",
+      title: "Tapas & Wine",
       duration: "3 Hours",
       icon: Wine,
+      image: tapas,
       description:
-        "Discover Valencia through gastronomy. Visit three local spots around the Central Market with tapas, wine, and authentic Valencian atmosphere.",
+        "A journey through local flavors and the finest Valencian wines.",
       highlight: "3 local venues",
     },
     {
-      title: "Valencia Bike & Lifestyle Experience",
+      title: "LGBTQ+ Pub Crawl",
+      duration: "5 Hours",
+      icon: Moon,
+      image: gpub,
+      description:
+        "The most vibrant nightlife circuit in the famous Ruzafa neighborhood.",
+      highlight: "Expert local guide",
+    },
+    {
+      title: "Bike Experience",
       duration: "4 Hours",
       icon: Bike,
+      image: bike,
       description:
-        "Bike from Torres de Serrano to the beach through Turia Gardens and Mediterranean neighborhoods. Discover how locals truly enjoy Valencia.",
+        "Ride from the city center to the sea through the lush Turia Gardens.",
       highlight: "Scenic route",
     },
     {
-      title: "Tuk Tuk Lifestyle Experience",
+      title: "Tuk Tuk Tour",
       duration: "3 Hours",
       icon: Car,
+      image: tuk,
       description:
-        "Discover Valencia aboard our tuk tuk through vibrant neighborhoods, lifestyle areas, and iconic landmarks in a relaxed atmosphere.",
-      highlight: "Small groups (max 4)",
+        "Effortless exploration of iconic landmarks in our stylish Tuk Tuk.",
+      highlight: "Private groups",
     },
     {
-      title: "Catamaran Sunset Experience",
+      title: "Catamaran Sunset",
       duration: "3 Hours",
       icon: Sailboat,
+      image: cata,
       description:
-        "Sail along Valencia's coastline during sunset with music, drinks, and Mediterranean atmosphere. 2 exits during the Games.",
+        "Golden hour on the Mediterranean with music, drinks and sea breeze.",
       highlight: "Drinks included",
     },
     {
-      title: "Cabañal Night Life Experience",
+      title: "Cabañal Night Experience",
       duration: "4 Hours",
       icon: Utensils,
+      image: night,
       description:
-        "Discover the authentic seaside neighborhood of Cabañal. Dinner in a traditional restaurant, then explore LGBTQ+ friendly venues by the beach.",
+        "Dinner in a traditional seaside restaurant and LGBTQ+ friendly venues.",
       highlight: "Dinner included",
     },
   ];
 
   useEffect(() => {
+    if (!emblaApi) return;
     const onSelect = () => {
-      setPrevBtnDisabled(!emblaApi?.canScrollPrev());
-      setNextBtnDisabled(!emblaApi?.canScrollNext());
+      setPrevBtnDisabled(!emblaApi.canScrollPrev());
+      setNextBtnDisabled(!emblaApi.canScrollNext());
     };
-
-    if (emblaApi) {
-      emblaApi.on("select", onSelect);
-      onSelect();
-    }
-
-    return () => {
-      emblaApi?.off("select", onSelect);
-    };
+    emblaApi.on("select", onSelect);
+    onSelect();
   }, [emblaApi]);
 
-  const onPrevClick = () => emblaApi?.scrollPrev();
-  const onNextClick = () => emblaApi?.scrollNext();
+  // Componente Reutilizable para la Card (Móvil y Desktop)
+  const ExperienceCard = ({
+    exp,
+    className,
+  }: {
+    exp: Experience;
+    className?: string;
+  }) => (
+    <div
+      className={cn(
+        "group relative overflow-hidden rounded-3xl border border-border transition-all duration-500 shadow-md",
+        className,
+      )}
+    >
+      <img
+        src={exp.image}
+        alt={exp.title}
+        className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-100 group-hover:opacity-0 transition-opacity duration-500" />
+
+      <div className="absolute bottom-6 left-6 right-6 transition-all duration-500 group-hover:translate-y-10 group-hover:opacity-0">
+        <h3 className="text-xl font-bold text-white uppercase tracking-tight drop-shadow-2xl">
+          {exp.title}
+        </h3>
+      </div>
+
+      <div className="absolute inset-0 bg-primary/95 p-8 flex flex-col justify-end translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out">
+        <div className="flex items-center justify-between mb-4">
+          <div className="p-2 bg-white/20 rounded-lg">
+            <exp.icon className="w-6 h-6 text-white" />
+          </div>
+          <span className="text-[10px] font-bold text-white bg-black/40 px-3 py-1 rounded-full flex items-center gap-1 backdrop-blur-md">
+            <Clock size={12} /> {exp.duration}
+          </span>
+        </div>
+        <h3 className="text-xl font-bold text-white mb-2 uppercase leading-tight">
+          {exp.title}
+        </h3>
+        <p className="text-white/90 text-sm mb-4 line-clamp-3 leading-relaxed">
+          {exp.description}
+        </p>
+        <div className="mt-auto self-start bg-white text-primary text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-tighter">
+          {exp.highlight}
+        </div>
+      </div>
+    </div>
+  );
 
   return (
     <section id="experiences" className="py-24 bg-card">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
         <div className="text-center mb-16">
-          <span className="text-muted font-semibold text-lg uppercase tracking-wider">
+          <span className="text-primary font-bold text-sm uppercase tracking-[0.3em]">
             Available Experiences
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mt-2 mb-4">
-            Mediterranean Experience
+          <h2 className="text-4xl md:text-5xl font-black text-foreground mt-2 mb-4 uppercase italic">
+            Mediterranean Lifestyle
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Authentic local experiences combining beaches, nightlife,
-            gastronomy, and Mediterranean lifestyle.
-          </p>
+          <div className="flex items-center justify-center gap-2 text-muted-foreground animate-bounce mt-4">
+            <MousePointer2 size={16} className="text-primary" />
+            <p className="text-[10px] font-black uppercase tracking-[0.2em]">
+              Hover to explore
+            </p>
+          </div>
         </div>
 
-        {/* Mobile Carousel (visible only on mobile) */}
+        {/* MOBILE CAROUSEL */}
         <div className="md:hidden">
           <div className="overflow-hidden" ref={emblaRef}>
             <div className="flex">
               {experiences.map((exp) => (
                 <div key={exp.title} className="flex-[0_0_100%] min-w-0 px-2">
-                  <div className="group bg-secondary rounded-2xl p-6 border border-border hover:border-muted/90 transition-all hover:shadow-lg h-full">
-                    <div className="flex items-start justify-between mb-4">
-                      <div className="w-12 h-12 rounded-xl bg-muted flex items-center justify-center group-hover:bg-primary/90 transition-color ">
-                        <exp.icon className="w-6 h-6 text-card" />
-                      </div>
-                      <span className="flex items-center gap-1 text-sm text-muted-foreground bg-primary-foreground/30 px-3 py-1 rounded-full">
-                        <Clock className="w-4 h-4" />
-                        {exp.duration}
-                      </span>
-                    </div>
-                    <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
-                      {exp.title}
-                    </h3>
-                    <p className="text-sm text-muted-foreground mb-4 line-clamp-3">
-                      {exp.description}
-                    </p>
-                    <div className="inline-block px-3 py-1 bg-muted/30 text-primary text-xs font-semibold rounded-full">
-                      {exp.highlight}
-                    </div>
-                  </div>
+                  <ExperienceCard exp={exp} className="h-[450px]" />
                 </div>
               ))}
             </div>
           </div>
-
-          {/* Carousel Navigation Buttons */}
-          <div className="flex items-center justify-between mt-6">
+          <div className="flex items-center justify-center gap-4 mt-6">
             <button
-              ref={prevButtonRef}
-              onClick={onPrevClick}
-              disabled={prevBtnDisabled}
-              className="p-2 rounded-lg bg-muted hover:bg-muted/80 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              onClick={() => emblaApi?.scrollPrev()}
+              className="p-2 rounded-full bg-muted hover:bg-primary hover:text-white transition-colors"
             >
-              <ChevronLeft className="w-5 h-5" />
+              <ChevronLeft size={20} />
             </button>
             <button
-              ref={nextButtonRef}
-              onClick={onNextClick}
-              disabled={nextBtnDisabled}
-              className="p-2 rounded-lg bg-muted hover:bg-muted/80 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              onClick={() => emblaApi?.scrollNext()}
+              className="p-2 rounded-full bg-muted hover:bg-primary hover:text-white transition-colors"
             >
-              <ChevronRight className="w-5 h-5" />
+              <ChevronRight size={20} />
             </button>
           </div>
         </div>
 
-        {/* Desktop Bento Grid (visible only on desktop) */}
-        <div className="hidden md:grid grid-cols-4 lg:grid-cols-5 gap-6">
-          {experiences.map((exp, index) => (
-            <div
-              key={exp.title}
-              className={`group bg-card-foreground rounded-2xl p-6 border border-border hover:border-muted/90 transition-all hover:shadow-lg ${
-                index === 0 || index === 1 ? "lg:col-span-2" : ""
-              }`}
-            >
-              <div className="flex items-start justify-between mb-4">
-                <div className="w-12 h-12 rounded-xl bg-muted flex items-center justify-center group-hover:bg-primary/90 transition-color ">
-                  <exp.icon className="w-6 h-6 text-card" />
-                </div>
-                <span className="flex items-center gap-1 text-sm text-muted-foreground bg-primary-foreground/30 px-3 py-1 rounded-full">
-                  <Clock className="w-4 h-4" />
-                  {exp.duration}
-                </span>
-              </div>
-              <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
-                {exp.title}
-              </h3>
-              <p className="text-sm text-muted-foreground mb-4 line-clamp-3">
-                {exp.description}
-              </p>
-              <div className="inline-block px-3 py-1 bg-muted/30 text-primary text-xs font-semibold rounded-full">
-                {exp.highlight}
-              </div>
-            </div>
-          ))}
+        {/* DESKTOP BENTO GRID */}
+        <div className="hidden md:grid grid-cols-4 gap-4 auto-rows-[300px]">
+          <ExperienceCard
+            exp={experiences[0]}
+            className="md:col-span-2 md:row-span-2"
+          />
+          <ExperienceCard
+            exp={experiences[1]}
+            className="md:col-span-2 md:row-span-1"
+          />
+          <ExperienceCard
+            exp={experiences[2]}
+            className="md:col-span-1 md:row-span-1"
+          />
+          <ExperienceCard
+            exp={experiences[3]}
+            className="md:col-span-1 md:row-span-1"
+          />
+          <ExperienceCard
+            exp={experiences[4]}
+            className="md:col-span-1 md:row-span-1"
+          />
+          <ExperienceCard
+            exp={experiences[5]}
+            className="md:col-span-1 md:row-span-1"
+          />
+          <ExperienceCard
+            exp={experiences[6]}
+            className="md:col-span-2 md:row-span-1"
+          />
         </div>
 
-        {/* More Experiences Note */}
-        <div className="mt-12 text-center">
-          <p className="text-muted-foreground">
-            <span className="text-foreground font-semibold">
-              For more experiences, just ask!
-            </span>{" "}
-            We can customize your itinerary personally.
+        <div className="mt-16 text-center">
+          <p className="text-muted-foreground text-sm">
+            Can't find what you're looking for?{" "}
+            <span className="text-primary font-bold underline cursor-pointer decoration-2 underline-offset-4">
+              Let's build your custom plan.
+            </span>
           </p>
         </div>
       </div>
