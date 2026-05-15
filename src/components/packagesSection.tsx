@@ -1,5 +1,6 @@
 import { Button } from "./ui/button";
 import { Check, Star, Crown, Sparkles, Building } from "lucide-react";
+import xabia from "../../images/xabia.webp";
 
 export function PackagesSection() {
   const packages = [
@@ -140,6 +141,7 @@ export function PackagesSection() {
 
         {/* Premium Add-on */}
         <div className="bg-muted-foreground rounded-2xl p-8 border border-accent/30">
+          <img src={xabia} alt="abia" className="w-full h-full object-cover" />
           <div className="flex flex-col lg:flex-row items-center gap-8">
             <div className="flex-1">
               <span className="inline-block px-3 py-1 bg-muted text-card text-sm font-semibold rounded-full mb-4">
