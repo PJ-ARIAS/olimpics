@@ -2,7 +2,7 @@ import { Header } from "./components/header";
 import { HeroSection } from "./components/heroSection";
 import { AboutSection } from "./components/aboutSection";
 import { PackagesSection } from "./components/packagesSection";
-import { ExperiencesSection } from "./components/experienceSection";
+// import { ExperiencesSection } from "./components/experienceSection";
 import { HowItWorksSection } from "./components/howWorks";
 import { RegistrationForm } from "./components/registrationForm";
 import { Gallery } from "./components/galery";
@@ -16,7 +16,7 @@ function App() {
         <HeroSection />
         <AboutSection />
         <PackagesSection />
-        <ExperiencesSection />
+        {/* <ExperiencesSection /> */}
         <HowItWorksSection />
         <RegistrationForm />
         <Gallery />

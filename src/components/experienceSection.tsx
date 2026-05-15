@@ -19,14 +19,14 @@ import {
 import { cn } from "../../lib/utils";
 
 // Imágenes
-import vlch from "../../images/valtourgood.webp";
+import vlch from "../../images/toursus.webp";
 import gbeach from "../../images/beachgood.webp";
-import gpub from "../../images/gpub.webp";
+import gpub from "../../images/pubsus.webp";
 import tapas from "../../images/pug.webp";
 import bike from "../../images/biketourgood.webp";
-import tuk from "../../images/tuktukgood.webp";
-import cata from "../../images/catamarangood.webp";
-import night from "../../images/cabanal.webp";
+import tuk from "../../images/tuktuksus.webp";
+import cata from "../../images/catamaransus.webp";
+import night from "../../images/cabanalsus.webp";
 
 interface Experience {
   title: string;
@@ -259,6 +259,10 @@ export function ExperiencesSection() {
           <ExperienceCard
             exp={experiences[6]}
             className="md:col-span-2 md:row-span-1"
+          />
+          <ExperienceCard
+            exp={experiences[7]}
+            className="md:col-span-4 md:row-span-1"
           />
         </div>
 

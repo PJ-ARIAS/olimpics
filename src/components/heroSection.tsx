@@ -8,7 +8,7 @@ import {
   MapPinned,
 } from "lucide-react";
 // import ggoli from "../../images/gaygamesLogo.png";
-import back from "../../images/headerimg.webp";
+import back from "../../images/herogood.webp";
 
 export function HeroSection() {
   const features = [
@@ -37,11 +37,6 @@ export function HeroSection() {
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* Badge */}
-        {/* <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-muted-foreground/20 border border-primary/30 mb-8 mt-10">
-          <img src={ggoli} alt="" className="h-30" />
-        </div> */}
-
         {/* Main heading */}
         <h1 className="text-4xl sm:text-5xl lg:text-7xl uppercase font-bold text-foreground mb-6 leading-tight text-balance">
           Valencia gay games

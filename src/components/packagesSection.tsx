@@ -1,6 +1,7 @@
 import { Button } from "./ui/button";
 import { Check, Star, Crown, Sparkles, Building } from "lucide-react";
 import xabia from "../../images/xabia.webp";
+import { ExperiencesSection } from "./experienceSection";
 
 export function PackagesSection() {
   const packages = [
@@ -33,7 +34,7 @@ export function PackagesSection() {
     {
       name: "Package C",
       subtitle: "Full Gay Games Experience",
-      price: "1,500€",
+      price: "1,400€",
       experiences: 5,
       description:
         "Valencia Historic & Lifestyle Tour + Choose 4 additional experiences",
@@ -139,37 +140,64 @@ export function PackagesSection() {
           ))}
         </div>
 
+        {/* SECCION DE EXPERIENCIAS */}
+
+        <ExperiencesSection></ExperiencesSection>
+
         {/* Premium Add-on */}
-        <div className="bg-muted-foreground rounded-2xl p-8 border border-accent/30">
-          <img src={xabia} alt="abia" className="w-full h-full object-cover" />
-          <div className="flex flex-col lg:flex-row items-center gap-8">
+        <div className="relative overflow-hidden bg-zinc-950 rounded-2xl p-8 border border-accent/30 group">
+          {/* IMAGEN DE FONDO */}
+          <img
+            src={xabia}
+            alt="Xàbia"
+            className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+            loading="lazy"
+          />
+
+          {/* GRADIENTE MULTICAPA PARA EL FONDO (Garantiza máxima legibilidad en cualquier pantalla) */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/75 to-black/30 lg:bg-gradient-to-r lg:from-black/95 lg:via-black/75 lg:to-transparent" />
+
+          {/* CONTENIDO DE LA TARJETA (Traído al frente con z-10) */}
+          <div className="relative z-10 flex flex-col lg:flex-row items-start lg:items-center gap-8 h-full w-full">
             <div className="flex-1">
-              <span className="inline-block px-3 py-1 bg-muted text-card text-sm font-semibold rounded-full mb-4">
+              <span className="inline-block px-3 py-1 bg-primary text-primary-foreground text-sm font-semibold rounded-full mb-4 shadow-sm">
                 Premium Add-On
               </span>
-              <h3 className="text-2xl font-bold text-foreground mb-2">
+
+              <h3 className="text-2xl md:text-3xl font-black text-white mb-3 uppercase italic tracking-tight drop-shadow-md">
                 Dénia & Xàbia Mediterranean Experience
               </h3>
-              <p className="text-card mb-4">
+
+              <p className="text-zinc-200 text-sm md:text-base mb-6 leading-relaxed max-w-3xl drop-shadow-sm">
                 Discover crystal-clear beaches, hidden coves, beach clubs,
                 paella, music, and Mediterranean summer vibes with included
                 transfers. A special full-day experience to celebrate the end of
                 the Gay Games in one of the most beautiful places on the
                 Mediterranean coast.
               </p>
+
               <div className="flex items-baseline gap-2">
-                <span className="text-3xl font-bold text-foreground">
+                <span className="text-3xl font-bold text-white drop-shadow-sm">
                   From 500€
                 </span>
-                <span className="text-card font-bold">per person</span>
+                <span className="text-zinc-300 font-medium text-sm">
+                  per person
+                </span>
               </div>
             </div>
+
+            {/* BOTÓN ALINEADO */}
             <Button
               asChild
               size="lg"
-              className="bg-muted hover:bg-secondary hover:text-accent text-card"
+              className="bg-white hover:bg-primary text-black hover:text-white transition-all self-stretch lg:self-auto text-center"
             >
-              <a href="#contact">Add package</a>
+              <a
+                href="#contact"
+                className="font-bold uppercase tracking-wider text-xs"
+              >
+                Add package
+              </a>
             </Button>
           </div>
         </div>
