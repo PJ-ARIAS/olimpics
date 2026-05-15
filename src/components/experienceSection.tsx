@@ -35,6 +35,7 @@ interface Experience {
   image: string;
   description: string;
   highlight: string;
+  // highlight2?: string;
 }
 
 export function ExperiencesSection() {
@@ -55,7 +56,7 @@ export function ExperiencesSection() {
       image: vlch,
       description:
         "Explore the heart of the city, Roman ruins and the authentic local lifestyle.",
-      highlight: "Paella included",
+      highlight: "Lunch included ",
     },
     {
       title: "Gay Beach Experience",
@@ -63,7 +64,7 @@ export function ExperiencesSection() {
       icon: Sun,
       image: gbeach,
       description:
-        "Sun, sea and the best vibes at Valencia's famous Mediterranean gay beach.",
+        "Expeience Valencia´s gay beach with local hosts, beach vibes a fun social beach day during the gay games surrounded by international travelers and Mediterranean lifestyle.",
       highlight: "Transfers included",
     },
     {
@@ -72,7 +73,7 @@ export function ExperiencesSection() {
       icon: Wine,
       image: tapas,
       description:
-        "A journey through local flavors and the finest Valencian wines.",
+        "Enjoy tapas, wine and Mediterranean atmosphere arounw the Central Market and El Carmen. The experience finishes in one of the favorite LGBTQ+ friendly venues in the historic center.",
       highlight: "3 local venues",
     },
     {
@@ -81,8 +82,8 @@ export function ExperiencesSection() {
       icon: Moon,
       image: gpub,
       description:
-        "The most vibrant nightlife circuit in the famous Ruzafa neighborhood.",
-      highlight: "Expert local guide",
+        "Discover Valencia's LGBTQ+ night life through Rusafa and El Carmen together with local hosts and new friends. Hiden bars, social spots, great atmosphere, and optional late-night disco entrance",
+      highlight: "+ 50€ disco entrance",
     },
     {
       title: "Bike Experience",
@@ -90,7 +91,7 @@ export function ExperiencesSection() {
       icon: Bike,
       image: bike,
       description:
-        "Ride from the city center to the sea through the lush Turia Gardens.",
+        "Bike from Valencia’s historic center to the beach while discovering local neighborhoods and Mediterranean lifestyle.Includes stops along the route and lunch in a local restaurant by the beach.",
       highlight: "Scenic route",
     },
     {
@@ -99,7 +100,7 @@ export function ExperiencesSection() {
       icon: Car,
       image: tuk,
       description:
-        "Effortless exploration of iconic landmarks in our stylish Tuk Tuk.",
+        "Explore Valencia by tuk tuk through iconic neighborhoods, hidden local corners, and Mediterranean lifestyle spots.A relaxed and social experience full of local stories, atmosphere, and insider recommendations.",
       highlight: "Private groups",
     },
     {
@@ -108,7 +109,7 @@ export function ExperiencesSection() {
       icon: Sailboat,
       image: cata,
       description:
-        "Golden hour on the Mediterranean with music, drinks and sea breeze.",
+        "Enjoy Valencia’s sunset from the sea with music, drinks, Mediterranean vibes, and great atmosphere.  One of the most iconic and relaxing experiences during the Gay Games.",
       highlight: "Drinks included",
     },
     {
@@ -117,7 +118,7 @@ export function ExperiencesSection() {
       icon: Utensils,
       image: night,
       description:
-        "Dinner in a traditional seaside restaurant and LGBTQ+ friendly venues.",
+        "Discover Valencia’s seaside nightlife through local bars, restaurants, and Mediterranean atmosphere in Cabañal.The evening finishes in one of our favorite LGBTQ+ friendly venues by the beach.",
       highlight: "Dinner included",
     },
   ];

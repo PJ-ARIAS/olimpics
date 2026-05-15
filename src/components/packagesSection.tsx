@@ -145,13 +145,15 @@ export function PackagesSection() {
               <span className="inline-block px-3 py-1 bg-muted text-card text-sm font-semibold rounded-full mb-4">
                 Premium Add-On
               </span>
-              <h3 className="text-2xl font-bold text-card mb-2">
-                Premium Xàbia Mediterranean Escape
+              <h3 className="text-2xl font-bold text-foreground mb-2">
+                Dénia & Xàbia Mediterranean Experience
               </h3>
               <p className="text-card mb-4">
-                Full Day Experience - 6 July. Travel to Dénia and Xàbia during a
-                scenic Mediterranean route to discover spectacular beaches,
-                hidden coves, crystal-clear water, and incredible landscapes.
+                Discover crystal-clear beaches, hidden coves, beach clubs,
+                paella, music, and Mediterranean summer vibes with included
+                transfers. A special full-day experience to celebrate the end of
+                the Gay Games in one of the most beautiful places on the
+                Mediterranean coast.
               </p>
               <div className="flex items-baseline gap-2">
                 <span className="text-3xl font-bold text-foreground">

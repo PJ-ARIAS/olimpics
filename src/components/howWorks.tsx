@@ -4,29 +4,26 @@ export function HowItWorksSection() {
   const steps = [
     {
       number: "1",
-      title: "Choose your package",
-      description:
-        "Package A, B or C based on your preferences and available time.",
+      title: "Choose your packages",
+      description: "Package A, B or C. ",
       icon: Package,
     },
     {
       number: "2",
-      title: "Select your experiences",
-      description:
-        "Choose your preferred activities and dates from our available experiences.",
+      title: "Select",
+      description: "Choose your preferred activities and dates.",
       icon: Calendar,
     },
     {
       number: "3",
-      title: "Contact our team",
-      description:
-        "Send us your request. We customize your itinerary personally.",
+      title: "Send us your request ",
+      description: "We customize your itinerary.",
       icon: MessageSquare,
     },
     {
       number: "4",
       title: "Confirm your reservation",
-      description: "Easy online payment and confirmation. You are all set!",
+      description: "Easy online payment and confirmation.",
       icon: CreditCard,
     },
   ];
@@ -37,10 +34,10 @@ export function HowItWorksSection() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <span className="text-muted font-semibold text-lg uppercase tracking-wider">
-            How It Works
+            How to book
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mt-2 mb-4">
-            How it works
+            How does it work ?
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Simple process to secure your Mediterranean experience during the
@@ -79,12 +76,16 @@ export function HowItWorksSection() {
 
         {/* Urgency Banner */}
         <div className="mt-16 bg-muted-foreground rounded-2xl p-8 text-center border border-primary/30">
-          <p className="text-lg text-card font-semibold mb-2">
+          <p className="text-3xl text-card font-bold uppercase mb-2">
+            experience valencia like a local during the gay games.
+          </p>
+          <p className="text-2xl text-card font-semibold mb-2">
             Limited availability during the Gay Games period
           </p>
+          <p className="text-card">Book early to secure your experiences.</p>
           <p className="text-card">
-            Book early to secure your experiences. Mediterranean Lifestyle -
-            Beaches - Nightlife - Gastronomy - Local Connections
+            Mediterranean Lifestyle-Beaches - Nightlife - Gastronomy - Local
+            Connections
           </p>
         </div>
       </div>

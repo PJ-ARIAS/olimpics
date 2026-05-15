@@ -8,6 +8,7 @@ import {
   MapPinned,
 } from "lucide-react";
 // import ggoli from "../../images/gaygamesLogo.png";
+import back from "../../images/headerimg.jpeg";
 
 export function HeroSection() {
   const features = [
@@ -15,7 +16,7 @@ export function HeroSection() {
     { icon: Beer, text: "Night life" },
     { icon: Compass, text: "Gastronomy" },
     { icon: Heart, text: "Mediterranean Lifestyle" },
-    { icon: MapPinned, text: "Authentic Local Experiences" },
+    { icon: MapPinned, text: "Local host" },
   ];
 
   return (
@@ -23,7 +24,7 @@ export function HeroSection() {
       {/* Background */}
       <div className="absolute inset-0">
         <img
-          src="../../images/valencia-games.jpg"
+          src={back}
           alt="Ciudad de las Artes y las Ciencias de Valencia"
           className="w-full h-full object-cover"
         />
@@ -42,9 +43,9 @@ export function HeroSection() {
         </div> */}
 
         {/* Main heading */}
-        <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-foreground mb-6 leading-tight text-balance">
-          Experience Packages
-          <span className="block text-muted">in Valencia</span>
+        <h1 className="text-4xl sm:text-5xl lg:text-7xl uppercase font-bold text-foreground mb-6 leading-tight text-balance">
+          Valencia gay games
+          <span className="block text-muted">experience Packages</span>
         </h1>
 
         {/* Subtitle */}
@@ -91,7 +92,7 @@ export function HeroSection() {
             className="bg-muted text-secondary text-lg px-8 hover:bg-secondary hover:text-accent  "
           >
             <a href="#packages">
-              Packages
+              Discover Packages
               <ArrowRight className="ml-2 w-5 h-5" />
             </a>
           </Button>
@@ -101,7 +102,7 @@ export function HeroSection() {
             size="lg"
             className="text-lg px-8 border-border bg-accent text-card hover:bg-muted/30 hover:text-muted"
           >
-            <a href="#experiences">Check the experience</a>
+            <a href="#experiences">Explore experiences</a>
           </Button>
         </div>
 
