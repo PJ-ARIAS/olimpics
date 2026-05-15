@@ -19,14 +19,14 @@ import {
 import { cn } from "../../lib/utils";
 
 // Imágenes
-import vlch from "../../images/valtour.png";
-import gbeach from "../../images/xabia.png";
-import gpub from "../../images/gpub.png";
-import tapas from "../../images/pug.png";
-import bike from "../../images/biketourgood.jpeg";
-import tuk from "../../images/tuktukgood.png";
-import cata from "../../images/catamarangood.png";
-import night from "../../images/cabanal.png";
+import vlch from "../../images/valtourgood.webp";
+import gbeach from "../../images/beachgood.webp";
+import gpub from "../../images/gpub.webp";
+import tapas from "../../images/pug.webp";
+import bike from "../../images/biketourgood.webp";
+import tuk from "../../images/tuktukgood.webp";
+import cata from "../../images/catamarangood.webp";
+import night from "../../images/cabanal.webp";
 
 interface Experience {
   title: string;
