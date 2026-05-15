@@ -8,7 +8,7 @@ import {
   MapPinned,
 } from "lucide-react";
 // import ggoli from "../../images/gaygamesLogo.png";
-import back from "../../images/headerimg.jpeg";
+import back from "../../images/headerimg.webp";
 
 export function HeroSection() {
   const features = [

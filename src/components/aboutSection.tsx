@@ -46,7 +46,7 @@ export function AboutSection() {
                 <Users className="w-6 h-6 text-card" />
               </div>
               <h3 className="text-xl font-bold text-foreground">
-                During the Gay games we will ejoy...
+                During the Gay games we will enjoy...
               </h3>
             </div>
             <div className="grid sm:grid-cols-3 gap-6">
