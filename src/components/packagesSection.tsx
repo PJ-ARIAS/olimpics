@@ -2,6 +2,7 @@ import { Button } from "./ui/button";
 import { Check, Star, Crown, Sparkles, Building } from "lucide-react";
 import xabia from "../../images/xabia.webp";
 import { ExperiencesSection } from "./experienceSection";
+import { trackGA4Event } from "../utils/analytics";
 
 export function PackagesSection() {
   const packages = [
@@ -188,6 +189,13 @@ export function PackagesSection() {
 
             {/* BOTÓN ALINEADO */}
             <Button
+              onClick={() => {
+                trackGA4Event("click_add_package", {
+                  package_name: "Dénia & Xàbia Mediterranean Experience",
+                  value: 500,
+                  currency: "EUR",
+                });
+              }}
               asChild
               size="lg"
               className="bg-white hover:bg-primary text-black hover:text-white transition-all self-stretch lg:self-auto text-center"
