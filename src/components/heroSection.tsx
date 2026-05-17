@@ -10,6 +10,8 @@
 // import ggoli from "../../images/gaygamesLogo.png";
 import back from "../../images/herosectionfinalarreglado.webp";
 
+import backMobile from "../../images/herosectionfinal.webp";
+
 export function HeroSection() {
   // const features = [
   //   { icon: Volleyball, text: "Beaches" },
@@ -23,11 +25,19 @@ export function HeroSection() {
     <section className="relative min-h-screen flex items-end justify-start pt-20 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
-        <img
-          src={back}
-          alt="Ciudad de las Artes y las Ciencias de Valencia"
-          className="w-full h-full object-cover"
-        />
+        <picture>
+          {/* Si la pantalla mide 768px o más (Escritorio), carga la foto horizontal */}
+          <source media="(min-width: 768px)" srcSet={back} />
+
+          {/* Por defecto (Móviles), carga la foto vertical optimizada */}
+          <img
+            src={backMobile}
+            alt="Ciudad de las Artes y las Ciencias de Valencia durante los Gay Games"
+            // object-cover asegura que se adapte milimétricamente a la pantalla del teléfono sin deformarse
+            className="w-full h-full object-cover object-center transition-all duration-500"
+            loading="eager" // Fuerza la carga inmediata por ser la primera imagen que ve el usuario
+          />
+        </picture>
         <div className="absolute inset-0 bg-gradient-to-b from-background/10 via-background/10 to-background" />
       </div>
 
