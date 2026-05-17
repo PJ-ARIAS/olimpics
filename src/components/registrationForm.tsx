@@ -31,9 +31,9 @@ export function RegistrationForm() {
 
   // Definir límites por paquete
   const packageLimits: Record<string, number> = {
-    a: 2, // Paquete A: Máximo 3 experiencias
-    b: 3, // Paquete B: Máximo 5 experiencias
-    c: 4, // Paquete C: pueden ser todas
+    a: 3, // Paquete A: Máximo 3 experiencias
+    b: 4, // Paquete B: Máximo 5 experiencias
+    c: 5, // Paquete C: pueden ser todas
   };
 
   const currentLimit = packageLimits[selectedPackage] || 0;
@@ -155,13 +155,13 @@ export function RegistrationForm() {
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="a">
-                      Package A (Max 2 experiences)
+                      Package A (Max 3 experiences)
                     </SelectItem>
                     <SelectItem value="b">
-                      Package B (Max 3 experiences)
+                      Package B (Max 4 experiences)
                     </SelectItem>
                     <SelectItem value="c">
-                      Package C (Max 4 experiences)
+                      Package C (Max 5 experiences)
                     </SelectItem>
                   </SelectContent>
                 </Select>

@@ -11,8 +11,7 @@ export function PackagesSection() {
       subtitle: "Basic Experience Package",
       price: "950€",
       experiences: 3,
-      description:
-        "Valencia Historic & Lifestyle Tour + Choose 2 additional experiences",
+      description: "Choose 3 additional experiences",
       perfectFor: ["Short stays", "First-time visitors", "Limited free time"],
       icon: Star,
       popular: false,
@@ -22,8 +21,7 @@ export function PackagesSection() {
       subtitle: "Mediterranean Experience Package",
       price: "1,200€",
       experiences: 4,
-      description:
-        "Valencia Historic & Lifestyle Tour + Choose 3 additional experiences",
+      description: " Choose 4 additional experiences",
       perfectFor: [
         "Mediterranean lifestyle travelers",
         "Social travelers",
@@ -37,8 +35,7 @@ export function PackagesSection() {
       subtitle: "Full Gay Games Experience",
       price: "1,400€",
       experiences: 5,
-      description:
-        "Valencia Historic & Lifestyle Tour + Choose 4 additional experiences",
+      description: "Choose 5 additional experiences",
       perfectFor: [
         "The ultimate Mediterranean lifestyle experience during the Gay Games",
       ],
