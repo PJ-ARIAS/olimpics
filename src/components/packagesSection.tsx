@@ -1,6 +1,6 @@
 import { Button } from "./ui/button";
 import { Check, Star, Crown, Sparkles, Building } from "lucide-react";
-import xabia from "../../images/xabia.webp";
+import xabia from "../../images/bestHavea.webp";
 import { ExperiencesSection } from "./experienceSection";
 import { trackGA4Event } from "../utils/analytics";
 
@@ -146,7 +146,7 @@ export function PackagesSection() {
         <ExperiencesSection></ExperiencesSection>
 
         {/* Premium Add-on */}
-        <div className="relative overflow-hidden bg-zinc-950 rounded-2xl p-8 border border-accent/30 group">
+        <div className="relative overflow-hidden bg-muted text-card rounded-2xl p-8 border border-accent/30 group">
           {/* IMAGEN DE FONDO */}
           <img
             src={xabia}
@@ -198,7 +198,7 @@ export function PackagesSection() {
               }}
               asChild
               size="lg"
-              className="bg-white hover:bg-primary text-black hover:text-white transition-all self-stretch lg:self-auto text-center"
+              className="bg-white hover:bg-muted text-card hover:text-foreground transition-all self-stretch lg:self-auto text-center"
             >
               <a
                 href="#contact"

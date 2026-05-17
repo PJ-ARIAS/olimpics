@@ -8,7 +8,7 @@ import {
   MapPinned,
 } from "lucide-react";
 // import ggoli from "../../images/gaygamesLogo.png";
-import back from "../../images/herogood.webp";
+import back from "../../images/herobueno.webp";
 
 export function HeroSection() {
   const features = [
@@ -28,7 +28,7 @@ export function HeroSection() {
           alt="Ciudad de las Artes y las Ciencias de Valencia"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/30 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/10 via-background/10 to-background" />
       </div>
 
       {/* Animated accent */}
