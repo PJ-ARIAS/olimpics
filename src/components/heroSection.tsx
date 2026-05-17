@@ -9,7 +9,6 @@
 // } from "lucide-react";
 // import ggoli from "../../images/gaygamesLogo.png";
 import back from "../../images/herosectionfinalarreglado.webp";
-
 import backMobile from "../../images/herosectionfinal.webp";
 
 export function HeroSection() {
@@ -22,9 +21,12 @@ export function HeroSection() {
   // ];
 
   return (
-    <section className="relative min-h-screen flex items-end justify-start pt-20 overflow-hidden">
+    // CAMBIO CLAVE EN EL PADRE:
+    // h-[450px] en móvil para reducir el contenedor y evitar scroll innecesario.
+    // md:min-h-[calc(100vh-93px)] en ordenadores para que use el espacio completo restante de la pantalla.
+    <section className="relative h-[350px] md:min-h-[calc(100vh-93px)] flex items-end justify-start pt-20 overflow-hidden bg-background">
       {/* Background */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 w-full h-full">
         <picture>
           {/* Si la pantalla mide 768px o más (Escritorio), carga la foto horizontal */}
           <source media="(min-width: 768px)" srcSet={back} />
@@ -33,19 +35,22 @@ export function HeroSection() {
           <img
             src={backMobile}
             alt="Ciudad de las Artes y las Ciencias de Valencia durante los Gay Games"
-            // object-cover asegura que se adapte milimétricamente a la pantalla del teléfono sin deformarse
+            // CAMBIO AQUÍ: w-full y h-full hacen que llene los 450px del contenedor de forma responsive y exacta.
             className="w-full h-full object-cover object-center transition-all duration-500"
-            loading="eager" // Fuerza la carga inmediata por ser la primera imagen que ve el usuario
+            loading="eager"
           />
         </picture>
-        <div className="absolute inset-0 bg-gradient-to-b from-background/10 via-background/10 to-background" />
+
+        {/* Filtro degradado adaptado a la nueva altura */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background/5 via-background/20 to-background" />
       </div>
 
-      {/* Animated accent */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] opacity-10 blur-3xl">
+      {/* Animated accent (Ajustado para que no descuadre el tamaño reducido en móvil) */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[300px] h-[300px] md:w-[600px] md:h-[600px] opacity-10 blur-3xl pointer-events-none">
         <div className="w-full h-full rounded-full bg-gradient-to-r from-red-500 via-yellow-500 via-green-500 via-blue-500 to-primary animate-pulse" />
       </div>
 
+      {/* Contenedor z-10 (Actualmente vacío, pero conserva la estructura responsive impecable) */}
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Main heading */}
         {/* <h1 className="text-4xl sm:text-5xl lg:text-7xl uppercase font-bold text-foreground mb-6 leading-tight text-balance">
@@ -76,25 +81,15 @@ export function HeroSection() {
                 {feature.text}
               </span>
             </div>
-          ))} */}
-        {/* <div className="flex items-center gap-2 text-muted-foreground">
-            <span className="text-md text-foreground font-medium">
-              Mediterranean Lifestyle
-            </span>
-          </div>
-          <div className="flex items-center gap-2 text-muted-foreground">
-            <span className="text-md text-foreground font-medium">
-              Authentic Local Experiences
-            </span>
-          </div> */}
-        {/* </div> */}
+          ))}
+        </div> */}
 
         {/* CTA Buttons */}
         {/* <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button
             asChild
             size="lg"
-            className="bg-muted text-secondary text-lg px-8 hover:bg-secondary hover:text-accent  "
+            className="bg-muted text-secondary text-lg px-8 hover:bg-secondary hover:text-accent   "
           >
             <a href="#packages">
               Discover Packages
