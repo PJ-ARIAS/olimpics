@@ -144,7 +144,7 @@ export function ExperiencesSection() {
       <img
         src={exp.image}
         alt={exp.title}
-        className="absolute inset-0 h-full w-full object-contain p-2 transition-transform duration-700 group-hover:scale-105"
+        className="absolute inset-0 h-full w-full object-fill   transition-transform duration-700 group-hover:scale-105"
       />
 
       {/* Overlay sutil para no interferir con la imagen completa */}
