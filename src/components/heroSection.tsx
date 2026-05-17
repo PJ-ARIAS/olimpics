@@ -1,26 +1,26 @@
-import { Button } from "./ui/button";
-import {
-  ArrowRight,
-  Volleyball,
-  Heart,
-  Compass,
-  Beer,
-  MapPinned,
-} from "lucide-react";
+// import { Button } from "./ui/button";
+// import {
+//   ArrowRight,
+//   Volleyball,
+//   Heart,
+//   Compass,
+//   Beer,
+//   MapPinned,
+// } from "lucide-react";
 // import ggoli from "../../images/gaygamesLogo.png";
-import back from "../../images/herobueno.webp";
+import back from "../../images/herosectionfinalarreglado.webp";
 
 export function HeroSection() {
-  const features = [
-    { icon: Volleyball, text: "Beaches" },
-    { icon: Beer, text: "Night life" },
-    { icon: Compass, text: "Gastronomy" },
-    { icon: Heart, text: "Mediterranean Lifestyle" },
-    { icon: MapPinned, text: "Local host" },
-  ];
+  // const features = [
+  //   { icon: Volleyball, text: "Beaches" },
+  //   { icon: Beer, text: "Night life" },
+  //   { icon: Compass, text: "Gastronomy" },
+  //   { icon: Heart, text: "Mediterranean Lifestyle" },
+  //   { icon: MapPinned, text: "Local host" },
+  // ];
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+    <section className="relative min-h-screen flex items-end justify-start pt-20 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
         <img
@@ -38,13 +38,13 @@ export function HeroSection() {
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Main heading */}
-        <h1 className="text-4xl sm:text-5xl lg:text-7xl uppercase font-bold text-foreground mb-6 leading-tight text-balance">
+        {/* <h1 className="text-4xl sm:text-5xl lg:text-7xl uppercase font-bold text-foreground mb-6 leading-tight text-balance">
           Valencia gay games
           <span className="block text-muted">experience Packages</span>
-        </h1>
+        </h1> */}
 
         {/* Subtitle */}
-        <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto mb-4 text-pretty">
+        {/* <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto mb-4 text-pretty">
           <strong className="text-foreground">
             Discover Valencia Beyond the Games
           </strong>
@@ -52,22 +52,22 @@ export function HeroSection() {
         <p className="text-base sm:text-lg text-foreground max-w-3xl mx-auto mb-8 text-pretty">
           Spend your free time during the Games with locals. Experience Valencia
           with a local LGBTQ+ friendly team based in the heart of the city.
-        </p>
+        </p> */}
 
         {/* Features */}
-        <div className="flex flex-wrap justify-center gap-6 mb-10">
+        {/* <div className="flex flex-wrap justify-center gap-6 mb-10">
           {features.map((feature) => (
             <div
               key={feature.text}
-              className="flex items-center gap-2 text-muted-foreground"
+              className="flex items-baseline gap-2 text-muted-foreground"
             >
               <feature.icon className="w-5 h-5 text-muted" />
               <span className="text-md text-foreground font-medium">
                 {feature.text}
               </span>
             </div>
-          ))}
-          {/* <div className="flex items-center gap-2 text-muted-foreground">
+          ))} */}
+        {/* <div className="flex items-center gap-2 text-muted-foreground">
             <span className="text-md text-foreground font-medium">
               Mediterranean Lifestyle
             </span>
@@ -77,10 +77,10 @@ export function HeroSection() {
               Authentic Local Experiences
             </span>
           </div> */}
-        </div>
+        {/* </div> */}
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        {/* <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button
             asChild
             size="lg"
@@ -99,13 +99,13 @@ export function HeroSection() {
           >
             <a href="#experiences">Explore experiences</a>
           </Button>
-        </div>
+        </div> */}
 
         {/* Tagline */}
-        <p className="mt-12 text-md text-muted italic">
+        {/* <p className="mt-12 text-md text-muted italic">
           {'"'}Help you experience Valencia like a local during the Gay Games.
           {'"'}
-        </p>
+        </p> */}
       </div>
     </section>
   );

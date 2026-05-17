@@ -55,7 +55,7 @@ export function PackagesSection() {
           <span className="text-primary font-semibold text-sm uppercase tracking-wider">
             Experience Packages
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mt-2 mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold  uppercase text-pretty text-foreground mt-2 mb-4">
             Choose your package
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -198,7 +198,7 @@ export function PackagesSection() {
               }}
               asChild
               size="lg"
-              className="bg-white hover:bg-muted text-card hover:text-foreground transition-all self-stretch lg:self-auto text-center"
+              className="bg-muted hover:bg-muted text-card hover:text-foreground transition-all self-stretch lg:self-auto text-center"
             >
               <a
                 href="#contact"

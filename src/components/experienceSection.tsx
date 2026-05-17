@@ -23,7 +23,7 @@ import vlch from "../../images/toursus.webp";
 import gbeach from "../../images/beachgood.webp";
 import gpub from "../../images/pubsus.webp";
 import tapas from "../../images/pug.webp";
-import bike from "../../images/biketourgood.webp";
+import bike from "../../images/biketoursus.png";
 import tuk from "../../images/tuktuksus.webp";
 import cata from "../../images/catamaransus.webp";
 import night from "../../images/cabañalgood.webp";
