@@ -7,6 +7,7 @@ import { HowItWorksSection } from "./components/howWorks";
 import { RegistrationForm } from "./components/registrationForm";
 import { Gallery } from "./components/galery";
 import { Footer } from "./components/footer";
+import { Groups } from "./components/groups";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <PackagesSection />
         {/* <ExperiencesSection /> */}
         <HowItWorksSection />
+        <Groups />
         <RegistrationForm />
         <Gallery />
       </main>
