@@ -11,7 +11,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "./ui/select";
-import { Send, Check, AlertCircle, ArrowRight } from "lucide-react";
+import { Send, Check, AlertCircle } from "lucide-react";
 import { cn } from "../../lib/utils";
 // IMPORTANTE: Ajusta la ruta a tu archivo de analítica
 import { trackGA4Event } from "../utils/analytics";
