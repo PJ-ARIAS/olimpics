@@ -25,8 +25,8 @@ import gpub from "../../images/pubsus.webp";
 import tapas from "../../images/pug.webp";
 import bike from "../../images/biketoursus.png";
 import tuk from "../../images/tuktuksus.webp";
-import cata from "../../images/catamaransus.webp";
-import night from "../../images/cabañalgood.webp";
+import cata from "../../images/catamaranestour.webp";
+import night from "../../images/cañalestour.webp";
 
 interface Experience {
   title: string;
