@@ -4,7 +4,8 @@ import hotelImage from "../../images/headerimg.webp";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-// import { Clock, Check } from "lucide-react";
+import { Button } from "./ui/button";
+import { ArrowRight } from "lucide-react";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -210,6 +211,20 @@ export function Groups() {
                       )}
                     ></p>
                   </div>
+                  <Button
+                    asChild
+                    className={cn(
+                      "rounded-full font-bold uppercase tracking-wider text-xs px-8 py-6 h-auto shadow-xl transition-all hover:scale-105 active:scale-95",
+                      isAltCard
+                        ? "bg-card text-muted hover:bg-white hover:text-zinc-900"
+                        : "bg-muted text-card hover:bg-muted/70",
+                    )}
+                  >
+                    <a href="#contact">
+                      Reserve Now
+                      <ArrowRight className="ml-2 w-4 h-4" />
+                    </a>
+                  </Button>
                 </div>
               </div>
             );
