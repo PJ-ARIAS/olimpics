@@ -17,19 +17,19 @@ export function Groups() {
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
 
   const accommodations = [
-    {
-      id: "acc-1",
-      title: "Need accommodation in Valencia?",
-      image: hotelImage,
-      description:
-        "Our team can help you find the best accommodation during the Gay Games.",
-      features: [
-        "Boutique hotels",
-        "4* & 5* Premium hotels",
-        "Apartments LGBTQ+ friendly",
-        "Average rates during Games",
-      ],
-    },
+    // {
+    //   id: "acc-1",
+    //   title: "Need accommodation in Valencia?",
+    //   image: hotelImage,
+    //   description:
+    //     "Our team can help you find the best accommodation during the Gay Games.",
+    //   features: [
+    //     "Boutique hotels",
+    //     "4* & 5* Premium hotels",
+    //     "Apartments LGBTQ+ friendly",
+    //     "Average rates during Games",
+    //   ],
+    // },
     {
       id: "acc-2",
       title: "Premium Luxury Experience",
@@ -58,7 +58,7 @@ export function Groups() {
     },
     {
       id: "acc-4",
-      title: "Customize  your package ana reserve",
+      title: "Customize  your package and reserve",
       image: hotelImage,
       description:
         "More than just the Gay Games, this is your chance to experience Valencia  with new local friends. Discover Mediterranean lifestyle, authentic local atmosphere, new friends, and unforgettable experiences with a welcoming LGBTQ+ friendly team that will make you feel at home in Valencia.",
