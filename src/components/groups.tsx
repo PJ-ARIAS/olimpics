@@ -4,7 +4,7 @@ import hotelImage from "../../images/headerimg.webp";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { Clock, Check } from "lucide-react";
+// import { Clock, Check } from "lucide-react";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
