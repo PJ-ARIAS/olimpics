@@ -35,7 +35,6 @@ interface Experience {
   image: string;
   description: string;
   highlight: string;
-  // highlight2?: string;
 }
 
 export function ExperiencesSection() {
@@ -56,7 +55,7 @@ export function ExperiencesSection() {
       image: vlch,
       description:
         "Together, we will discover Valencia from our office in El Carmen, exploring hidden streets, local atmosphere, and the historic center before enjoying a traditional Valencian paella lunch.",
-      highlight: "Lunch included ",
+      highlight: "Lunch included",
     },
     {
       title: "Gay Beach Experience",
@@ -64,7 +63,7 @@ export function ExperiencesSection() {
       icon: Sun,
       image: gbeach,
       description:
-        "Together, we will escape to Valencia’s gay beach located just 20 minutes from the city center. Before heading to the beach, we will enjoy lunch together in a local restaurant  close to the beach  and then spend the afternoon surrounded by good vibes, Mediterranean atmosphere, and plenty of new friends.  Includes: Local hosts Transfers Restaurant lunch",
+        "Together, we will escape to Valencia’s gay beach located just 20 minutes from the city center. Includes: Local hosts, Transfers, Restaurant lunch and afternoon vibes with plenty of new friends.",
       highlight: "Transfers included",
     },
     {
@@ -73,7 +72,7 @@ export function ExperiencesSection() {
       icon: Wine,
       image: tapas,
       description:
-        "Together, we will discover Valencia through tapas, wine, local atmosphere, and Mediterranean lifestyle while visiting hidden spots around the Central Market area, finishing the experience in one of our favorite LGBTQ+ friendly venues in El Carmen neighborhood.",
+        "Together, we will discover Valencia through tapas, wine, and Mediterranean lifestyle while visiting hidden spots around the Central Market area and El Carmen neighborhood.",
       highlight: "3 local venues",
     },
     {
@@ -82,7 +81,7 @@ export function ExperiencesSection() {
       icon: Moon,
       image: gpub,
       description:
-        "Together, we will discover Valencia’s best LGBTQ+ nightlife areas in Ruzafa and El Carmen alongside local hosts, exploring bars, hidden spots, and the city’s authentic nightlife atmosphere during the Gay Games. More than a pub crawl, this is a social local nightlife experience with local friends. Optional Add-On: Late-night disco entrance after 1 AM (+€50)",
+        "Together, we will discover Valencia’s best LGBTQ+ nightlife areas in Ruzafa and El Carmen. A social nightlife experience with local friends. Optional: Disco entrance (+€50).",
       highlight: "+ 50€ disco entrance",
     },
     {
@@ -91,7 +90,7 @@ export function ExperiencesSection() {
       icon: Bike,
       image: bike,
       description:
-        "Together, we will bike from Valencia’s historic center to the beach while discovering Mediterranean neighborhoods, hidden local spots, the City of Arts and Sciences, and the authentic lifestyle of the city with our friendly local guide.",
+        "Together, we will bike from Valencia’s historic center to the beach while discovering Mediterranean neighborhoods, City of Arts and Sciences, and the authentic lifestyle.",
       highlight: "Scenic route",
     },
     {
@@ -100,7 +99,7 @@ export function ExperiencesSection() {
       icon: Car,
       image: tuk,
       description:
-        "Together, we will discover Valencia aboard our fun tuk tuk experience, one of the easiest and most enjoyable ways to explore the city and its most important neighborhoods. We will visit vibrant areas, Mediterranean lifestyle spots, iconic landmarks, and hidden local corners together with our local hosts in a relaxed and social atmosphere.",
+        "Discover Valencia aboard our fun tuk tuk experience. One of the easiest and most enjoyable ways to explore the city, iconic landmarks, and hidden local corners.",
       highlight: "Private groups",
     },
     {
@@ -109,7 +108,7 @@ export function ExperiencesSection() {
       icon: Sailboat,
       image: cata,
       description:
-        "Together, we will sail along Valencia’s coastline during sunset while enjoying music, drinks, sea breeze, and Mediterranean atmosphere. We will relax, socialize, take photos, and enjoy one of the most iconic experiences in Valencia. A true Mediterranean sunset experience during the Gay Games. We will have 2 exits during the games.",
+        "Together, we will sail along Valencia’s coastline during sunset while enjoying music, drinks, sea breeze, and Mediterranean atmosphere. A true iconic experience.",
       highlight: "Drinks included",
     },
     {
@@ -118,16 +117,12 @@ export function ExperiencesSection() {
       icon: Utensils,
       image: night,
       description:
-        "Together, we will discover the nightlife atmosphere of Cabañal, Valencia’s historic fishermen’s neighborhood and one of the trendiest areas in the city today. We will enjoy tapas, local bars, Mediterranean atmosphere, and hidden local spots before finishing the evening in one of our favorite LGBTQ+ friendly venues in the city.",
+        "Discover the nightlife of Cabañal, the historic fishermen’s neighborhood. Enjoy tapas, local bars, and Mediterranean atmosphere in one of the trendiest areas.",
       highlight: "Dinner included",
     },
   ];
 
-  useEffect(() => {
-    if (!emblaApi) return;
-  }, [emblaApi]);
-
-  // Componente Reutilizable para la Card
+  // Componente de Card optimizado (Sin icono y con reloj abajo)
   const ExperienceCard = ({
     exp,
     className,
@@ -137,44 +132,42 @@ export function ExperiencesSection() {
   }) => (
     <div
       className={cn(
-        "group relative overflow-hidden rounded-3xl border border-border bg-zinc-950 transition-all duration-500 shadow-md",
+        "group relative overflow-hidden rounded-3xl border border-border  transition-all duration-500 shadow-md",
         className,
       )}
     >
       <img
         src={exp.image}
         alt={exp.title}
-        className="absolute inset-0 h-full w-full object-fill   transition-transform duration-700 group-hover:scale-105"
+        className="absolute inset-0 h-full w-full object-fill transition-transform duration-700 group-hover:scale-110"
       />
 
-      {/* Overlay sutil para no interferir con la imagen completa */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-100 group-hover:opacity-0 transition-opacity duration-500" />
-
-      {/* Título visible por defecto */}
+      {/* Estado Inicial */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/1 to-transparent opacity-100 group-hover:opacity-0 transition-opacity duration-500" />
       <div className="absolute bottom-6 left-6 right-6 transition-all duration-500 group-hover:translate-y-10 group-hover:opacity-0">
-        <h3 className="text-xl font-bold text-white uppercase tracking-tight drop-shadow-2xl">
+        <h3 className="text-xl font-bold text-white uppercase tracking-tight drop-shadow-2xl italic">
           {exp.title}
         </h3>
       </div>
 
-      {/* Información al hacer Hover */}
-      <div className="absolute inset-0 bg-primary/95 p-8 flex flex-col justify-end translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out">
-        <div className="flex items-center justify-between mb-4">
-          <div className="p-2 bg-white/20 rounded-lg">
-            <exp.icon className="w-6 h-6 text-white" />
-          </div>
-          <span className="text-[10px] font-bold text-white bg-black/40 px-3 py-1 rounded-full flex items-center gap-1 backdrop-blur-md">
-            <Clock size={12} /> {exp.duration}
-          </span>
-        </div>
-        <h3 className="text-xl font-bold text-white mb-2 uppercase leading-tight">
+      {/* Estado Hover */}
+      <div className="absolute inset-0 bg-primary/95 p-6 flex flex-col opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out overflow-y-auto scrollbar-none">
+        <h3 className="text-lg font-black text-white mb-2 uppercase leading-tight shrink-0 italic">
           {exp.title}
         </h3>
-        <p className="text-white/90 text-sm mb-4 line-clamp-4 leading-relaxed">
+
+        <p className="text-white/95 text-xs md:text-sm mb-6 leading-relaxed font-medium">
           {exp.description}
         </p>
-        <div className="mt-auto self-start bg-white text-primary text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-tighter">
-          {exp.highlight}
+
+        {/* Footer del Hover: Reloj y Highlight juntos abajo */}
+        <div className="mt-auto shrink-0 flex items-center justify-between gap-2">
+          <div className="bg-white text-muted text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-tighter shadow-xl">
+            {exp.highlight}
+          </div>
+          <span className="text-[10px] font-bold text-white bg-muted  px-3 py-1.5 rounded-full flex items-center gap-1 backdrop-blur-md">
+            <Clock size={12} /> {exp.duration}
+          </span>
         </div>
       </div>
     </div>
@@ -213,13 +206,13 @@ export function ExperiencesSection() {
           <div className="flex items-center justify-center gap-4 mt-6">
             <button
               onClick={() => emblaApi?.scrollPrev()}
-              className="p-2 rounded-full bg-muted hover:bg-primary hover:text-white transition-colors"
+              className="p-2 rounded-full bg-muted hover:bg-primary transition-colors"
             >
               <ChevronLeft size={20} />
             </button>
             <button
               onClick={() => emblaApi?.scrollNext()}
-              className="p-2 rounded-full bg-muted hover:bg-primary hover:text-white transition-colors"
+              className="p-2 rounded-full bg-muted hover:bg-primary transition-colors"
             >
               <ChevronRight size={20} />
             </button>
@@ -228,17 +221,14 @@ export function ExperiencesSection() {
 
         {/* DESKTOP BENTO GRID */}
         <div className="hidden md:grid grid-cols-4 gap-4 auto-rows-[300px]">
-          {/* Card Grande Vertical */}
           <ExperienceCard
             exp={experiences[0]}
             className="md:col-span-2 md:row-span-2"
           />
-          {/* Card Ancha */}
           <ExperienceCard
             exp={experiences[1]}
             className="md:col-span-2 md:row-span-1"
           />
-          {/* Cards Cuadradas */}
           <ExperienceCard
             exp={experiences[2]}
             className="md:col-span-1 md:row-span-1"
@@ -255,7 +245,6 @@ export function ExperiencesSection() {
             exp={experiences[5]}
             className="md:col-span-1 md:row-span-1"
           />
-          {/* Card Ancha Final */}
           <ExperienceCard
             exp={experiences[6]}
             className="md:col-span-2 md:row-span-1"
@@ -266,7 +255,6 @@ export function ExperiencesSection() {
           />
         </div>
 
-        {/* Footer Note */}
         <div className="mt-16 text-center">
           <p className="text-muted-foreground text-sm">
             Can't find what you're looking for?{" "}
