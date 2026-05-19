@@ -9,14 +9,6 @@ import team2 from "../../images/PABLO ACTIVITIES COORDINATOR.jpg";
 import team3 from "../../images/STUART COORDINATOR.jpg";
 
 export function AboutSection() {
-  const meetingPointFeatures = [
-    "Start experiences",
-    "Meet other travelers",
-    "Organize activities",
-    "Receive assistance",
-    "Discover Valencia with locals",
-  ];
-
   // 1. TRANSFORM TEAM IMAGES ARRAY INTO AN ARRAY OF OBJECTS (image + description)
   const teamMembers = [
     {
