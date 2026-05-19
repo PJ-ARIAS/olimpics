@@ -1,4 +1,4 @@
-import { MapPin, Users, Coffee, Check, Compass } from "lucide-react";
+import { MapPin } from "lucide-react";
 import meeting from "../../images/meetingpoint.webp";
 // import { Button } from "./ui/button";
 import { cn } from "../../lib/utils";
