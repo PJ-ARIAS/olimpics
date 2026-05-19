@@ -42,7 +42,7 @@ export function HeroSection() {
         </picture>
 
         {/* Filtro degradado adaptado a la nueva altura */}
-        <div className="absolute inset-0 bg-gradient-to-b from-background/5 via-background/20 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/1 via-background/1 to-background" />
       </div>
 
       {/* Animated accent (Ajustado para que no descuadre el tamaño reducido en móvil) */}
