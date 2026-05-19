@@ -8,6 +8,7 @@ import { RegistrationForm } from "./components/registrationForm";
 import { Gallery } from "./components/galery";
 import { Footer } from "./components/footer";
 import { Group } from "./components/group";
+import { Calendary } from "./components/calendario";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <main>
         <HeroSection />
         <PackagesSection />
+        <Calendary />
         <Group />
         <AboutSection />
         {/* <ExperiencesSection /> */}
