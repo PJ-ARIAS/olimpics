@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import emailjs from "@emailjs/browser"; // Importación de EmailJS
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
@@ -13,11 +14,11 @@ import {
 } from "./ui/select";
 import { Send, Check, AlertCircle } from "lucide-react";
 import { cn } from "../../lib/utils";
-// Tu utilidad de analítica
 import { trackGA4Event } from "../utils/analytics";
 
 export function RegistrationForm() {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false); // Estado para evitar múltiples envíos
   const [selectedExperiences, setSelectedExperiences] = useState<string[]>([]);
   const [selectedPackage, setSelectedPackage] = useState<string>("");
 
@@ -43,7 +44,6 @@ export function RegistrationForm() {
 
   const handleToggle = (exp: string) => {
     if (!selectedPackage) return;
-
     setSelectedExperiences((prev) => {
       const isSelected = prev.includes(exp);
       if (isSelected) return prev.filter((e) => e !== exp);
@@ -54,30 +54,60 @@ export function RegistrationForm() {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsLoading(true);
 
-    // 1. TRACKING GA4 (Tu función personalizada)
-    trackGA4Event("generate_lead_gay_games", {
-      package_type: selectedPackage,
-      experience_count: selectedExperiences.length,
+    // 1. Recopilar datos del formulario
+    const formData = new FormData(e.currentTarget);
+
+    // 2. Parámetros para EmailJS
+    const templateParams = {
+      from_name: formData.get("name"),
+      reply_to: formData.get("email"), // IMPORTANTE: Para que funcione el Auto-Reply
+      phone: formData.get("phone"),
+      country: formData.get("country"),
+      package: selectedPackage.toUpperCase(),
       experiences: selectedExperiences.join(", "),
-      location: "registration_form_footer",
-    });
+      arrival_date: formData.get("arrival"),
+      travelers: formData.get("travelers"),
+      accommodation: formData.get("accommodation"),
+      message: formData.get("message") || "No additional comments",
+    };
 
-    // 2. TRACKING GOOGLE ADS (Conversión directa)
-    if (typeof window !== "undefined" && window.gtag) {
-      window.gtag("event", "conversion", {
-        // Sustituye el ID de envío ('send_to') por el que te proporcione Google Ads
-        // si es diferente al ID de cuenta base.
-        send_to: "AW-16594563469",
-        value: 1.0,
-        currency: "EUR",
+    try {
+      // 3. Envío vía EmailJS (Esto dispara el template principal y el Auto-Reply configurado)
+      await emailjs.send(
+        "service_x2xiuku", // SERVICE ID
+        "template_cr8bpcb", //TEMPLATE ID PRINCIPAL
+        templateParams,
+        "0D2_RTpDkgCusGQIy", //PUBLIC KEY
+      );
+
+      // 4. TRACKING GA4
+      trackGA4Event("generate_lead_gay_games", {
+        package_type: selectedPackage,
+        experience_count: selectedExperiences.length,
+        experiences: selectedExperiences.join(", "),
+        location: "registration_form_footer",
       });
-    }
 
-    // Finalmente mostramos el mensaje de éxito
-    setIsSubmitted(true);
+      // 5. TRACKING GOOGLE ADS
+      if (typeof window !== "undefined" && (window as any).gtag) {
+        (window as any).gtag("event", "conversion", {
+          send_to: "AW-16594563469",
+          value: 1.0,
+          currency: "EUR",
+        });
+      }
+
+      setIsSubmitted(true);
+    } catch (error) {
+      console.error("Error al enviar el formulario:", error);
+      alert("Something went wrong. Please try again or contact us directly.");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   if (isSubmitted) {
@@ -111,7 +141,6 @@ export function RegistrationForm() {
   return (
     <section id="contact" className="py-24 bg-card">
       <div className="max-w-4xl mx-auto px-4">
-        {/* ... (Resto del formulario se mantiene igual) */}
         <div className="text-center mb-12">
           <span className="text-primary font-bold text-sm uppercase tracking-[0.3em]">
             Booking
@@ -128,8 +157,8 @@ export function RegistrationForm() {
           onSubmit={handleSubmit}
           className="bg-card-foreground/50 rounded-[40px] p-8 md:p-12 border border-muted shadow-2xl"
         >
-          {/* Contenido del formulario... */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            {/* --- 1. Personal Info --- */}
             <div className="space-y-4">
               <h3 className="font-black text-xl uppercase italic border-b border-muted pb-2 text-primary">
                 1. Personal Info
@@ -138,6 +167,7 @@ export function RegistrationForm() {
                 <Label htmlFor="name">Full Name *</Label>
                 <Input
                   id="name"
+                  name="name"
                   required
                   placeholder="John Doe"
                   className="mt-1.5 bg-card rounded-xl"
@@ -147,6 +177,7 @@ export function RegistrationForm() {
                 <Label htmlFor="email">Email *</Label>
                 <Input
                   id="email"
+                  name="email"
                   type="email"
                   required
                   placeholder="john@example.com"
@@ -157,6 +188,7 @@ export function RegistrationForm() {
                 <Label htmlFor="phone">WhatsApp / Phone *</Label>
                 <Input
                   id="phone"
+                  name="phone"
                   type="tel"
                   required
                   placeholder="+34 000 000 000"
@@ -167,6 +199,7 @@ export function RegistrationForm() {
                 <Label htmlFor="country">Country *</Label>
                 <Input
                   id="country"
+                  name="country"
                   required
                   placeholder="Your country"
                   className="mt-1.5 bg-card rounded-xl"
@@ -174,6 +207,7 @@ export function RegistrationForm() {
               </div>
             </div>
 
+            {/* --- 2. Trip Details --- */}
             <div className="space-y-4">
               <h3 className="font-black text-xl uppercase italic border-b border-muted pb-2 text-primary">
                 2. Trip Details
@@ -181,6 +215,7 @@ export function RegistrationForm() {
               <div>
                 <Label>Preferred Package *</Label>
                 <Select
+                  name="package_selection"
                   required
                   onValueChange={(value) => {
                     setSelectedPackage(value);
@@ -203,10 +238,9 @@ export function RegistrationForm() {
                   </SelectContent>
                 </Select>
               </div>
-              {/* ... Resto de los selects de Trip Details ... */}
               <div>
                 <Label>Number of Travelers *</Label>
-                <Select required>
+                <Select name="travelers" required>
                   <SelectTrigger className="mt-1.5 bg-card rounded-xl">
                     <SelectValue placeholder="How many people?" />
                   </SelectTrigger>
@@ -221,7 +255,7 @@ export function RegistrationForm() {
               </div>
               <div>
                 <Label>Need Accommodation? *</Label>
-                <Select required>
+                <Select name="accommodation" required>
                   <SelectTrigger className="mt-1.5 bg-card rounded-xl">
                     <SelectValue placeholder="Select option" />
                   </SelectTrigger>
@@ -235,6 +269,7 @@ export function RegistrationForm() {
                 <Label htmlFor="arrival">Arrival Date *</Label>
                 <Input
                   id="arrival"
+                  name="arrival"
                   type="date"
                   required
                   className="mt-1.5 bg-card rounded-xl"
@@ -243,13 +278,12 @@ export function RegistrationForm() {
             </div>
           </div>
 
+          {/* --- 3. Experiences --- */}
           <div className="mb-8 p-6 bg-background/50 rounded-3xl border border-muted/50">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
-              <div>
-                <Label className="text-foreground block font-black text-xl uppercase italic">
-                  3. Select Experiences
-                </Label>
-              </div>
+              <Label className="text-foreground block font-black text-xl uppercase italic">
+                3. Select Experiences
+              </Label>
               {selectedPackage && (
                 <span
                   className={cn(
@@ -324,6 +358,7 @@ export function RegistrationForm() {
             <Label htmlFor="message">Additional Comments (Optional)</Label>
             <textarea
               id="message"
+              name="message"
               rows={4}
               placeholder="Any special requests or dietary requirements?"
               className="mt-1.5 w-full px-4 py-3 bg-card border border-muted rounded-2xl focus:ring-2 focus:ring-primary outline-none transition-all"
@@ -333,11 +368,16 @@ export function RegistrationForm() {
           <Button
             type="submit"
             size="lg"
-            disabled={selectedExperiences.length === 0}
+            disabled={selectedExperiences.length === 0 || isLoading}
             className="w-full bg-primary hover:bg-zinc-900 text-white font-black uppercase italic tracking-widest py-8 rounded-full shadow-xl shadow-primary/20 disabled:opacity-30 transition-all"
           >
-            <Send className="w-5 h-5 mr-2" />
-            Request Custom Itinerary
+            {isLoading ? (
+              "Sending..."
+            ) : (
+              <>
+                <Send className="w-5 h-5 mr-2" /> Request Custom Itinerary
+              </>
+            )}
           </Button>
         </form>
       </div>
