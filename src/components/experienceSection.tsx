@@ -55,7 +55,7 @@ export function ExperiencesSection() {
       icon: Sun,
       image: vlch,
       description:
-        "Explore the heart of the city, Roman ruins and the authentic local lifestyle.",
+        "Together, we will discover Valencia from our office in El Carmen, exploring hidden streets, local atmosphere, and the historic center before enjoying a traditional Valencian paella lunch.",
       highlight: "Lunch included ",
     },
     {
@@ -64,7 +64,7 @@ export function ExperiencesSection() {
       icon: Sun,
       image: gbeach,
       description:
-        "Expeience Valencia´s gay beach with local hosts, beach vibes a fun social beach day during the gay games surrounded by international travelers and Mediterranean lifestyle.",
+        "Together, we will escape to Valencia’s gay beach located just 20 minutes from the city center. Before heading to the beach, we will enjoy lunch together in a local restaurant  close to the beach  and then spend the afternoon surrounded by good vibes, Mediterranean atmosphere, and plenty of new friends.  Includes: Local hosts Transfers Restaurant lunch",
       highlight: "Transfers included",
     },
     {
@@ -73,7 +73,7 @@ export function ExperiencesSection() {
       icon: Wine,
       image: tapas,
       description:
-        "Enjoy tapas, wine and Mediterranean atmosphere arounw the Central Market and El Carmen. The experience finishes in one of the favorite LGBTQ+ friendly venues in the historic center.",
+        "Together, we will discover Valencia through tapas, wine, local atmosphere, and Mediterranean lifestyle while visiting hidden spots around the Central Market area, finishing the experience in one of our favorite LGBTQ+ friendly venues in El Carmen neighborhood.",
       highlight: "3 local venues",
     },
     {
@@ -82,7 +82,7 @@ export function ExperiencesSection() {
       icon: Moon,
       image: gpub,
       description:
-        "Discover Valencia's LGBTQ+ night life through Rusafa and El Carmen together with local hosts and new friends. Hiden bars, social spots, great atmosphere, and optional late-night disco entrance",
+        "Together, we will discover Valencia’s best LGBTQ+ nightlife areas in Ruzafa and El Carmen alongside local hosts, exploring bars, hidden spots, and the city’s authentic nightlife atmosphere during the Gay Games. More than a pub crawl, this is a social local nightlife experience with local friends. Optional Add-On: Late-night disco entrance after 1 AM (+€50)",
       highlight: "+ 50€ disco entrance",
     },
     {
@@ -91,7 +91,7 @@ export function ExperiencesSection() {
       icon: Bike,
       image: bike,
       description:
-        "Bike from Valencia’s historic center to the beach while discovering local neighborhoods and Mediterranean lifestyle.Includes stops along the route and lunch in a local restaurant by the beach.",
+        "Together, we will bike from Valencia’s historic center to the beach while discovering Mediterranean neighborhoods, hidden local spots, the City of Arts and Sciences, and the authentic lifestyle of the city with our friendly local guide.",
       highlight: "Scenic route",
     },
     {
@@ -100,7 +100,7 @@ export function ExperiencesSection() {
       icon: Car,
       image: tuk,
       description:
-        "Explore Valencia by tuk tuk through iconic neighborhoods, hidden local corners, and Mediterranean lifestyle spots.A relaxed and social experience full of local stories, atmosphere, and insider recommendations.",
+        "Together, we will discover Valencia aboard our fun tuk tuk experience, one of the easiest and most enjoyable ways to explore the city and its most important neighborhoods. We will visit vibrant areas, Mediterranean lifestyle spots, iconic landmarks, and hidden local corners together with our local hosts in a relaxed and social atmosphere.",
       highlight: "Private groups",
     },
     {
@@ -109,7 +109,7 @@ export function ExperiencesSection() {
       icon: Sailboat,
       image: cata,
       description:
-        "Enjoy Valencia’s sunset from the sea with music, drinks, Mediterranean vibes, and great atmosphere.  One of the most iconic and relaxing experiences during the Gay Games.",
+        "Together, we will sail along Valencia’s coastline during sunset while enjoying music, drinks, sea breeze, and Mediterranean atmosphere. We will relax, socialize, take photos, and enjoy one of the most iconic experiences in Valencia. A true Mediterranean sunset experience during the Gay Games. We will have 2 exits during the games.",
       highlight: "Drinks included",
     },
     {
@@ -118,7 +118,7 @@ export function ExperiencesSection() {
       icon: Utensils,
       image: night,
       description:
-        "Discover Valencia’s seaside nightlife through local bars, restaurants, and Mediterranean atmosphere in Cabañal.The evening finishes in one of our favorite LGBTQ+ friendly venues by the beach.",
+        "Together, we will discover the nightlife atmosphere of Cabañal, Valencia’s historic fishermen’s neighborhood and one of the trendiest areas in the city today. We will enjoy tapas, local bars, Mediterranean atmosphere, and hidden local spots before finishing the evening in one of our favorite LGBTQ+ friendly venues in the city.",
       highlight: "Dinner included",
     },
   ];
@@ -185,15 +185,15 @@ export function ExperiencesSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <span className="text-primary font-bold text-sm uppercase tracking-[0.3em]">
+          <span className="text-muted font-bold text-sm uppercase tracking-[0.3em]">
             Available Experiences
           </span>
           <h2 className="text-4xl md:text-5xl font-black text-foreground mt-2 mb-4 uppercase italic">
             Mediterranean Lifestyle
           </h2>
           <div className="flex items-center justify-center gap-2 text-muted-foreground animate-bounce mt-4">
-            <MousePointer2 size={16} className="text-primary" />
-            <p className="text-[10px] font-black uppercase tracking-[0.2em]">
+            <MousePointer2 size={16} className="text-muted" />
+            <p className="text-[12px] font-black uppercase tracking-[0.2em]">
               Hover to explore
             </p>
           </div>

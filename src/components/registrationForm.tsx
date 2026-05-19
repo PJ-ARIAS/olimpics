@@ -12,7 +12,15 @@ import {
   SelectTrigger,
   SelectValue,
 } from "./ui/select";
-import { Send, Check, AlertCircle } from "lucide-react";
+import {
+  Send,
+  Check,
+  AlertCircle,
+  Package,
+  Calendar,
+  MessageSquare,
+  CreditCard,
+} from "lucide-react";
 import { cn } from "../../lib/utils";
 import { trackGA4Event } from "../utils/analytics";
 
@@ -137,6 +145,32 @@ export function RegistrationForm() {
       </section>
     );
   }
+  const steps = [
+    {
+      number: "1",
+      title: "Choose your packages",
+      description: "Package A, B or C. ",
+      icon: Package,
+    },
+    {
+      number: "2",
+      title: "Select",
+      description: "Choose your preferred activities and dates.",
+      icon: Calendar,
+    },
+    {
+      number: "3",
+      title: "Send us your request ",
+      description: "We customize your itinerary.",
+      icon: MessageSquare,
+    },
+    {
+      number: "4",
+      title: "Confirm your reservation",
+      description: "Easy online payment and confirmation.",
+      icon: CreditCard,
+    },
+  ];
 
   return (
     <section id="contact" className="py-24 bg-card">
@@ -153,6 +187,35 @@ export function RegistrationForm() {
           </p>
         </div>
 
+        {/* INICIO PASOS A SEGUIR */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-11">
+          {steps.map((step, index) => (
+            <div key={step.number} className="relative">
+              {/* Connector line */}
+              {index < steps.length - 1 && (
+                <div className="hidden lg:block absolute top-12 left-full w-full h-0.5 bg-gradient-to-r from-muted/50 to-transparent -translate-x-4" />
+              )}
+
+              <div className="text-center">
+                <div className="relative inline-flex items-center justify-center mb-6">
+                  <div className="w-24 h-24 rounded-2xl bg-secondary border border-muted flex items-center justify-center">
+                    <step.icon className="w-10 h-10 text-accent" />
+                  </div>
+                  <span className="absolute -top-2 -right-2 w-8 h-8 bg-muted/90 text-primary text-sm font-bold rounded-full flex items-center justify-center">
+                    {step.number}
+                  </span>
+                </div>
+                <h3 className="text-lg font-bold text-foreground mb-2">
+                  {step.title}
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  {step.description}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+        {/* INICIO FORMULARIO */}
         <form
           onSubmit={handleSubmit}
           className="bg-card-foreground/50 rounded-[40px] p-8 md:p-12 border border-muted shadow-2xl"

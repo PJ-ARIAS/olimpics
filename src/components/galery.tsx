@@ -13,9 +13,7 @@ import img4 from "../../images/tapas.jpg";
 import img5 from "../../images/bike.jpg";
 import img6 from "../../images/tuk.jpg";
 // TEAM IMAGES
-import team1 from "../../images/LUIS TBOV DIRECTOR .jpg";
-import team2 from "../../images/PABLO ACTIVITIES COORDINATOR.jpg";
-import team3 from "../../images/STUART COORDINATOR.jpg";
+
 // import team4 from "../../images/pug.webp";
 
 export function Gallery() {
@@ -61,7 +59,7 @@ export function Gallery() {
   }, [emblaApi, onInit, onSelect]);
 
   const images = [img1, img2, img3, img4, img5, img6];
-  const teamImages = [team1, team2, team3];
+  // const teamImages = [team1, team2, team3];
 
   return (
     <section id="gallery" className="py-16 bg-card-foreground">
@@ -80,28 +78,6 @@ export function Gallery() {
         </p>
 
         {/* Tira horizontal en móvil (scrollable) y Grid exacto de 5 columnas en Escritorio */}
-        <div className="flex gap-3 overflow-x-auto pb-4 md:grid md:grid-cols-3 md:gap-4 md:overflow-visible md:pb-0 scrollbar-none">
-          {teamImages.map((img, index) => (
-            <div
-              key={index}
-              className={cn(
-                "relative rounded-3xl  group shadow-sm hover:shadow-md transition-all duration-500",
-                // Móvil: Mantiene un ancho de caja fijo para deslizar de lado a lado
-                "flex-[0_0_150px] h-[150px]",
-                // Desktop: Se adapta de forma plana cubriendo las 5 columnas parejo
-                "md:flex-none md:w-full md:h-[200px] lg:h-[240px]",
-              )}
-            >
-              <img
-                src={img}
-                alt={`Team member ${index + 1}`}
-                className="absolute inset-0 h-full w-full rounded-3xl object-contain p-2 transition-transform duration-700 group-hover:scale-105"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-white/0 group-hover:bg-white/5 transition-colors duration-300 pointer-events-none rounded-3xl" />
-            </div>
-          ))}
-        </div>
       </div>
 
       {/* Contenedor del Carrusel */}

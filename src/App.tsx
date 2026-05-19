@@ -3,11 +3,11 @@ import { HeroSection } from "./components/heroSection";
 import { AboutSection } from "./components/aboutSection";
 import { PackagesSection } from "./components/packagesSection";
 // import { ExperiencesSection } from "./components/experienceSection";
-import { HowItWorksSection } from "./components/howWorks";
+// import { HowItWorksSection } from "./components/howWorks";
 import { RegistrationForm } from "./components/registrationForm";
 import { Gallery } from "./components/galery";
 import { Footer } from "./components/footer";
-import { Groups } from "./components/groups";
+import { Group } from "./components/group";
 
 function App() {
   return (
@@ -15,11 +15,11 @@ function App() {
       <Header />
       <main>
         <HeroSection />
-        <AboutSection />
         <PackagesSection />
+        <Group />
+        <AboutSection />
         {/* <ExperiencesSection /> */}
-        <HowItWorksSection />
-        <Groups />
+        {/* <HowItWorksSection /> */}
         <RegistrationForm />
         <Gallery />
       </main>

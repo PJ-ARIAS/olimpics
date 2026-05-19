@@ -1,116 +1,73 @@
-// import { Button } from "./ui/button";
-// import {
-//   ArrowRight,
-//   Volleyball,
-//   Heart,
-//   Compass,
-//   Beer,
-//   MapPinned,
-// } from "lucide-react";
-// import ggoli from "../../images/gaygamesLogo.png";
+import { Button } from "./ui/button";
+import {
+  // ArrowRight,
+  // Volleyball,
+  // Heart,
+  // Compass,
+  // Beer,
+  // MapPinned,
+  CheckCircle2, // Cambiado para el icono de los botones según la imagen
+} from "lucide-react";
 import back from "../../images/herosectionfinalarreglado.webp";
-import backMobile from "../../images/herosectionfinal.webp";
+import backMobile from "../../images/herosectionlast.webp";
 
 export function HeroSection() {
-  // const features = [
-  //   { icon: Volleyball, text: "Beaches" },
-  //   { icon: Beer, text: "Night life" },
-  //   { icon: Compass, text: "Gastronomy" },
-  //   { icon: Heart, text: "Mediterranean Lifestyle" },
-  //   { icon: MapPinned, text: "Local host" },
-  // ];
-
   return (
-    // CAMBIO CLAVE EN EL PADRE:
-    // h-[450px] en móvil para reducir el contenedor y evitar scroll innecesario.
-    // md:min-h-[calc(100vh-93px)] en ordenadores para que use el espacio completo restante de la pantalla.
-    <section className="relative h-[350px] md:min-h-[calc(100vh-93px)] flex items-end justify-start pt-20 overflow-hidden bg-background">
-      {/* Background */}
-      <div className="absolute inset-0 w-full h-full">
-        <picture>
-          {/* Si la pantalla mide 768px o más (Escritorio), carga la foto horizontal */}
-          <source media="(min-width: 768px)" srcSet={back} />
-
-          {/* Por defecto (Móviles), carga la foto vertical optimizada */}
-          <img
-            src={backMobile}
-            alt="Ciudad de las Artes y las Ciencias de Valencia durante los Gay Games"
-            // CAMBIO AQUÍ: w-full y h-full hacen que llene los 450px del contenedor de forma responsive y exacta.
-            className="w-full h-full object-cover object-center transition-all duration-500"
-            loading="eager"
-          />
-        </picture>
-
-        {/* Filtro degradado adaptado a la nueva altura */}
-        <div className="absolute inset-0 bg-gradient-to-b from-background/1 via-background/1 to-background" />
-      </div>
-
-      {/* Animated accent (Ajustado para que no descuadre el tamaño reducido en móvil) */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[300px] h-[300px] md:w-[600px] md:h-[600px] opacity-10 blur-3xl pointer-events-none">
-        <div className="w-full h-full rounded-full bg-gradient-to-r from-red-500 via-yellow-500 via-green-500 via-blue-500 to-primary animate-pulse" />
-      </div>
-
-      {/* Contenedor z-10 (Actualmente vacío, pero conserva la estructura responsive impecable) */}
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* Main heading */}
-        {/* <h1 className="text-4xl sm:text-5xl lg:text-7xl uppercase font-bold text-foreground mb-6 leading-tight text-balance">
-          Valencia gay games
-          <span className="block text-muted">experience Packages</span>
-        </h1> */}
-
-        {/* Subtitle */}
-        {/* <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto mb-4 text-pretty">
-          <strong className="text-foreground">
-            Discover Valencia Beyond the Games
-          </strong>
-        </p>
-        <p className="text-base sm:text-lg text-foreground max-w-3xl mx-auto mb-8 text-pretty">
-          Spend your free time during the Games with locals. Experience Valencia
-          with a local LGBTQ+ friendly team based in the heart of the city.
-        </p> */}
-
-        {/* Features */}
-        {/* <div className="flex flex-wrap justify-center gap-6 mb-10">
-          {features.map((feature) => (
-            <div
-              key={feature.text}
-              className="flex items-baseline gap-2 text-muted-foreground"
-            >
-              <feature.icon className="w-5 h-5 text-muted" />
-              <span className="text-md text-foreground font-medium">
-                {feature.text}
-              </span>
+    // bg-[#2589D8] para el azul de la imagen
+    <section className="relative min-h-[600px] md:h-[80vh] flex items-center justify-center bg-[#2589D8] py-12 px-4 overflow-hidden">
+      <div className="max-w-7xl mx-auto w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* LADO IZQUIERDO: IMAGEN ESTILO POSTER */}
+          <div className="flex justify-center lg:justify-end">
+            <div className="relative w-full max-w-[550px] aspect-square rounded-[3rem] overflow-hidden shadow-2xl border-4 border-white/10">
+              <picture>
+                <source media="(min-width: 768px)" srcSet={back} />
+                <img
+                  src={backMobile}
+                  alt="Valencia Gay Games Experiences"
+                  className="w-150 h-137 object-fill "
+                  loading="eager"
+                />
+              </picture>
             </div>
-          ))}
-        </div> */}
+          </div>
 
-        {/* CTA Buttons */}
-        {/* <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button
-            asChild
-            size="lg"
-            className="bg-muted text-secondary text-lg px-8 hover:bg-secondary hover:text-accent   "
-          >
-            <a href="#packages">
-              Discover Packages
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </a>
-          </Button>
-          <Button
-            asChild
-            variant="outline"
-            size="lg"
-            className="text-lg px-8 border-border bg-accent text-card hover:bg-muted/30 hover:text-muted"
-          >
-            <a href="#experiences">Explore experiences</a>
-          </Button>
-        </div> */}
+          {/* LADO DERECHO: TEXTO Y BOTONES SEGÚN REFERENCIA */}
+          <div className="text-white space-y-6 lg:pl-8">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight max-w-md">
+              Discover Valencia Beyond the Games.
+            </h1>
 
-        {/* Tagline */}
-        {/* <p className="mt-12 text-md text-muted italic">
-          {'"'}Help you experience Valencia like a local during the Gay Games.
-          {'"'}
-        </p> */}
+            <p className="text-lg opacity-90 max-w-lg leading-relaxed">
+              Spend your free time during the Games with locals. Experience
+              Valencia with a local LGBTQ+ friendly team based in the heart of
+              the city.
+            </p>
+
+            {/* BOTONES ESTILO PILL (CÁPSULA) */}
+            <div className="flex flex-col gap-4 pt-4 items-center">
+              <Button
+                asChild
+                className="w-100 bg-white text-[#2589D8] hover:bg-zinc-100 rounded-full px-8 py-6 text-sm font-bold uppercase tracking-wider shadow-lg"
+              >
+                <a href="#packages" className="flex items-center gap-3">
+                  <CheckCircle2 className="w-5 h-5" />
+                  Discover Packages
+                </a>
+              </Button>
+
+              <Button
+                asChild
+                className="w-100 bg-white text-[#2589D8] hover:bg-zinc-100 rounded-full px-8 py-6 text-sm font-bold uppercase tracking-wider shadow-lg"
+              >
+                <a href="#experiences" className="flex items-center gap-3">
+                  <CheckCircle2 className="w-5 h-5" />
+                  See Experiences
+                </a>
+              </Button>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -5,14 +5,27 @@ import { ExperiencesSection } from "./experienceSection";
 import { trackGA4Event } from "../utils/analytics";
 
 export function PackagesSection() {
+  const benefits = [
+    "Local LGBTQ+ host team",
+    "Guidance & assistance during your stay",
+    "Official TBOV Meeting Point in El Carmen",
+    "Restaurant booking assistance (up to 3)",
+    "Personalized local recommendations",
+    "Social atmosphere & local connections",
+    "Local guidance during experiences",
+  ];
   const packages = [
     {
       name: "Package A",
       subtitle: "Basic Experience Package",
       price: "950€",
-      experiences: 3,
-      description: "Choose 3 additional experiences",
-      perfectFor: ["Short stays", "First-time visitors", "Limited free time"],
+      experiences: 2,
+      description: "Basic entry to the Mediterranean lifestyle",
+      features: [
+        "Choose Valencia Historic & Lifestyle tour or Bike tour",
+        "Choose 2 additional experiences",
+        "Meeting point, local host and guidance",
+      ],
       icon: Star,
       popular: false,
     },
@@ -20,12 +33,13 @@ export function PackagesSection() {
       name: "Package B",
       subtitle: "Mediterranean Experience Package",
       price: "1,200€",
-      experiences: 4,
-      description: " Choose 4 additional experiences",
-      perfectFor: [
-        "Mediterranean lifestyle travelers",
-        "Social travelers",
-        "Complete Valencia experience",
+      experiences: 3,
+      description: "The most balanced local experience",
+      features: [
+        "Choose Valencia Historic & Lifestyle tour or Bike tour",
+        "Choose 3 additional experiences",
+        "Meeting point, local host and guidance",
+        "Restaurant booking service",
       ],
       icon: Crown,
       popular: true,
@@ -33,11 +47,14 @@ export function PackagesSection() {
     {
       name: "Package C",
       subtitle: "Full Gay Games Experience",
-      price: "1,400€",
-      experiences: 5,
-      description: "Choose 5 additional experiences",
-      perfectFor: [
-        "The ultimate Mediterranean lifestyle experience during the Gay Games",
+      price: "1,500€",
+      experiences: 4,
+      description: "The ultimate immersion in Valencia",
+      features: [
+        "Choose Valencia Historic & Lifestyle tour or Bike tour",
+        "Choose 4 additional experiences",
+        "Meeting point, local host and guidance",
+        "Restaurant booking service",
       ],
       icon: Sparkles,
       popular: false,
@@ -52,7 +69,7 @@ export function PackagesSection() {
           <span className="text-primary font-semibold text-sm uppercase tracking-wider">
             Experience Packages
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold  uppercase text-pretty text-foreground mt-2 mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold uppercase text-pretty text-foreground mt-2 mb-4">
             Choose your package
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -62,11 +79,11 @@ export function PackagesSection() {
         </div>
 
         {/* Packages Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {packages.map((pkg) => (
             <div
               key={pkg.name}
-              className={`relative rounded-2xl p-8 border transition-all hover:scale-105 ${
+              className={`relative rounded-2xl p-8 border transition-all hover:scale-105 flex flex-col ${
                 pkg.popular
                   ? "bg-gradient-to-b from-muted/30 to-card border-primary shadow-lg shadow-primary/20"
                   : "bg-card border-muted hover:border-primary/50"
@@ -79,20 +96,14 @@ export function PackagesSection() {
               )}
 
               <div className="flex items-center gap-3 mb-4">
-                <div
-                  className={`w-12 h-12 rounded-xl flex items-center justify-center ${pkg.popular ? "bg-secondary" : "bg-secondary"}`}
-                >
-                  <pkg.icon
-                    className={`w-6 h-6 ${pkg.popular ? "text-muted" : "text-muted"}`}
-                  />
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-secondary">
+                  <pkg.icon className="w-6 h-6 text-muted" />
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-foreground">
                     {pkg.name}
                   </h3>
-                  <p className="text-sm text-muted-foreground">
-                    {pkg.subtitle}
-                  </p>
+                  <p className="text-sm text-foreground">{pkg.subtitle}</p>
                 </div>
               </div>
 
@@ -105,32 +116,27 @@ export function PackagesSection() {
                     per person
                   </span>
                 </div>
-                <p className="text-sm text-muted font-medium mt-1">
-                  {pkg.experiences} Experiences
-                </p>
               </div>
 
-              <p className="text-sm text-muted-foreground mb-6">
-                {pkg.description}
-              </p>
-
-              {/* <div className="space-y-3 mb-8">
-                <p className="text-sm font-semibold text-foreground">
-                  Perfect for:
-                </p>
-                {pkg.perfectFor.map((item) => (
-                  <div key={item} className="flex items-start gap-2">
-                    <Check className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm text-muted-foreground">
+              {/* Lista de información solicitada */}
+              <div className="space-y-4 mb-8 flex-grow">
+                {pkg.features.map((item, index) => (
+                  <div key={index} className="flex items-start gap-3">
+                    <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-sm text'foreground leading-snug">
                       {item}
                     </span>
                   </div>
                 ))}
-              </div> */}
+              </div>
 
               <Button
                 asChild
-                className={`w-full ${pkg.popular ? "bg-muted text-card hover:bg-secondary hover:text-accent" : "hover:bg-secondary hover:text-accent text-card bg-muted/80"}`}
+                className={`w-full py-6 font-bold uppercase tracking-wider ${
+                  pkg.popular
+                    ? "bg-muted text-card hover:bg-secondary hover:text-accent"
+                    : "hover:bg-secondary hover:text-accent text-card bg-muted/80"
+                }`}
               >
                 <a href="#contact">Select package</a>
               </Button>
@@ -138,77 +144,96 @@ export function PackagesSection() {
           ))}
         </div>
 
-        {/* SECCION DE EXPERIENCIAS */}
+        <div className="lg:col-span-3 bg-card-foreground rounded-2xl p-6 md:p-5 border border-border">
+          <h3 className="text-xl font-bold text-muted mb-4 text-center">
+            All the packs include
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {benefits.map((benefit) => (
+              <div
+                key={benefit}
+                className="flex items-start gap-3 p-3 bg-muted-foreground/50 rounded-xl transition-colors hover:bg-muted-foreground/60"
+              >
+                <Check className="w-5 h-5 text-muted flex-shrink-0 mt-0.5" />
+                <span className="text-sm text-foreground leading-snug">
+                  {benefit}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
 
-        <ExperiencesSection></ExperiencesSection>
+        {/* SECCION DE EXPERIENCIAS */}
+        <ExperiencesSection />
 
         {/* Premium Add-on */}
-        <div className="relative overflow-hidden bg-muted text-card rounded-2xl p-8 border border-accent/30 group">
-          {/* IMAGEN DE FONDO */}
-          <img
-            src={xabia}
-            alt="Xàbia"
-            className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-            loading="lazy"
-          />
+        <div className="mt-16 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 bg-card rounded-[2.5rem] overflow-hidden border border-border shadow-2xl">
+            {/* LADO IZQUIERDO: IMAGEN FORMATO TARJETA */}
+            <div className="relative h-[350px] lg:h-auto min-h-[450px] overflow-hidden">
+              <img
+                src={xabia}
+                alt="Dénia & Xàbia Mediterranean Experience"
+                className="w-full h-full object-fill transition-transform duration-700 hover:scale-105"
+                loading="lazy"
+              />
+              {/* Overlay sutil para que combine con el diseño */}
+              <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent lg:hidden" />
+            </div>
 
-          {/* GRADIENTE MULTICAPA PARA EL FONDO (Garantiza máxima legibilidad en cualquier pantalla) */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/75 to-black/30 lg:bg-gradient-to-r lg:from-black/95 lg:via-black/75 lg:to-transparent" />
-
-          {/* CONTENIDO DE LA TARJETA (Traído al frente con z-10) */}
-          <div className="relative z-10 flex flex-col lg:flex-row items-start lg:items-center gap-8 h-full w-full">
-            <div className="flex-1">
-              <span className="inline-block px-3 py-1 bg-primary text-primary-foreground text-sm font-semibold rounded-full mb-4 shadow-sm">
+            {/* LADO DERECHO: TEXTO Y BOTÓN */}
+            <div className="flex flex-col justify-center p-8 md:p-12 lg:p-16 text-left bg-card">
+              <span className="inline-block w-fit px-4 py-1 bg-primary/10 text-muted text-xs font-bold uppercase tracking-widest rounded-full mb-6">
                 Premium Add-On
               </span>
 
-              <h3 className="text-2xl md:text-3xl font-black text-white mb-3 uppercase italic tracking-tight drop-shadow-md">
-                Dénia & Xàbia Mediterranean Experience
+              <h3 className="text-3xl md:text-4xl font-black text-foreground mb-4 uppercase italic leading-[0.9] tracking-tight">
+                Dénia & Xàbia <br />
+                <span className="text-muted">Mediterranean Experience</span>
               </h3>
 
-              <p className="text-zinc-200 text-sm md:text-base mb-6 leading-relaxed max-w-3xl drop-shadow-sm">
-                Discover crystal-clear beaches, hidden coves, beach clubs,
-                paella, music, and Mediterranean summer vibes with included
-                transfers. A special full-day experience to celebrate the end of
-                the Gay Games in one of the most beautiful places on the
-                Mediterranean coast.
+              <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-8 text-pretty">
+                Full Day. Together, we will travel to Cala Clemence in Portitxol
+                (Xàbia), one of the most spectacular Mediterranean spots on our
+                coast. Crystal-clear waters, breathtaking landscapes, and sunset
+                DJ sessions in a spectacular cliffside restaurant.
+                <span className="block mt-2 font-semibold text-foreground">
+                  Includes: Local host, Transportation, Paella lunch & Sangría.
+                </span>
               </p>
 
-              <div className="flex items-baseline gap-2">
-                <span className="text-3xl font-bold text-white drop-shadow-sm">
-                  From 500€
-                </span>
-                <span className="text-zinc-300 font-medium text-sm">
-                  per person
-                </span>
+              {/* Precio y Botón alineados */}
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 mt-auto">
+                <div className="flex items-baseline gap-2">
+                  <span className="text-4xl font-bold text-foreground">
+                    From 400€
+                  </span>
+                  <span className="text-muted-foreground text-sm font-medium">
+                    per person
+                  </span>
+                </div>
+
+                <Button
+                  onClick={() => {
+                    trackGA4Event("click_add_package", {
+                      package_name: "Dénia & Xàbia Mediterranean Experience",
+                      value: 400,
+                      currency: "EUR",
+                    });
+                  }}
+                  asChild
+                  size="lg"
+                  className="bg-muted text-white hover:bg-zinc-900 px-10 py-7 rounded-full font-black uppercase italic tracking-widest shadow-xl shadow-primary/20 transition-all w-full sm:w-auto"
+                >
+                  <a href="#contact">Add package</a>
+                </Button>
               </div>
             </div>
-
-            {/* BOTÓN ALINEADO */}
-            <Button
-              onClick={() => {
-                trackGA4Event("click_add_package", {
-                  package_name: "Dénia & Xàbia Mediterranean Experience",
-                  value: 500,
-                  currency: "EUR",
-                });
-              }}
-              asChild
-              size="lg"
-              className="bg-muted hover:bg-muted text-card hover:text-foreground transition-all self-stretch lg:self-auto text-center"
-            >
-              <a
-                href="#contact"
-                className="font-bold uppercase tracking-wider text-xs"
-              >
-                Add package
-              </a>
-            </Button>
           </div>
         </div>
 
         {/* Accommodation Section */}
-        <div className="mt-12 bg-card rounded-2xl p-8 border border-border">
+        <div className="mt-10 bg-card rounded-2xl p-8 border mb-0 border-border">
           <div className="flex items-start gap-4 mb-6">
             <div className="w-12 h-12 rounded-xl bg-muted flex items-center justify-center">
               <Building className="w-6 h-6 text-card" />
@@ -226,28 +251,28 @@ export function PackagesSection() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-6">
             {[
               "Boutique hotels",
-              "4 hotels",
-              "5 premium hotels",
+              "4* hotels",
+              "5* premium hotels",
               "Apartments",
               "LGBTQ+ friendly",
             ].map((type) => (
               <div
                 key={type}
-                className="flex items-center gap-2 text-lg text-foreground"
+                className="flex items-center gap-2 text-foreground font-medium"
               >
                 <Check className="w-4 h-4 text-primary" />
                 {type}
               </div>
             ))}
           </div>
-          <div className="bg-muted-foreground/50 rounded-xl p-4 inline-block">
-            <p className="text-sm text-muted">
+          <div className="bg-muted-foreground/20 rounded-xl p-4 inline-block border border-border">
+            <p className="text-xs text-muted-foreground uppercase tracking-widest font-bold mb-1">
               Average rates during Gay Games:
             </p>
-            <p className="text-xl font-bold text-foreground">
+            <p className="text-2xl font-black text-foreground">
               150€ - 250€{" "}
-              <span className="text-sm font-semibold text-foreground">
-                per night (double room)
+              <span className="text-sm font-semibold text-muted-foreground">
+                / night (double room)
               </span>
             </p>
           </div>
