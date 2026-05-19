@@ -13,7 +13,7 @@ import {
 } from "./ui/select";
 import { Send, Check, AlertCircle } from "lucide-react";
 import { cn } from "../../lib/utils";
-// IMPORTANTE: Ajusta la ruta a tu archivo de analítica
+// Tu utilidad de analítica
 import { trackGA4Event } from "../utils/analytics";
 
 export function RegistrationForm() {
@@ -57,7 +57,7 @@ export function RegistrationForm() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    // --- INTEGRACIÓN TRACKER DE ANALITICA ---
+    // 1. TRACKING GA4 (Tu función personalizada)
     trackGA4Event("generate_lead_gay_games", {
       package_type: selectedPackage,
       experience_count: selectedExperiences.length,
@@ -65,15 +65,18 @@ export function RegistrationForm() {
       location: "registration_form_footer",
     });
 
-    // Envío de conversión a Google Ads (Opcional pero recomendado)
+    // 2. TRACKING GOOGLE ADS (Conversión directa)
     if (typeof window !== "undefined" && window.gtag) {
       window.gtag("event", "conversion", {
+        // Sustituye el ID de envío ('send_to') por el que te proporcione Google Ads
+        // si es diferente al ID de cuenta base.
         send_to: "AW-16594563469",
         value: 1.0,
         currency: "EUR",
       });
     }
 
+    // Finalmente mostramos el mensaje de éxito
     setIsSubmitted(true);
   };
 
@@ -86,15 +89,17 @@ export function RegistrationForm() {
         <h2 className="text-3xl font-black uppercase italic mb-4">
           Thank you!
         </h2>
-        <p className="text-muted-foreground max-w-md mx-auto italic">
+        <p className="text-muted-foreground max-w-md mx-auto italic text-pretty">
           Your request for{" "}
-          <strong>Package {selectedPackage.toUpperCase()}</strong> has been
-          sent. Our local team will contact you shortly to finalize your
-          Mediterranean experience.
+          <strong className="text-foreground">
+            Package {selectedPackage.toUpperCase()}
+          </strong>{" "}
+          has been sent. Our local team will contact you shortly to finalize
+          your Mediterranean experience.
         </p>
         <Button
           variant="outline"
-          className="mt-8 rounded-full"
+          className="mt-8 rounded-full px-8"
           onClick={() => (window.location.href = "/")}
         >
           Back to Home
@@ -106,6 +111,7 @@ export function RegistrationForm() {
   return (
     <section id="contact" className="py-24 bg-card">
       <div className="max-w-4xl mx-auto px-4">
+        {/* ... (Resto del formulario se mantiene igual) */}
         <div className="text-center mb-12">
           <span className="text-primary font-bold text-sm uppercase tracking-[0.3em]">
             Booking
@@ -122,8 +128,8 @@ export function RegistrationForm() {
           onSubmit={handleSubmit}
           className="bg-card-foreground/50 rounded-[40px] p-8 md:p-12 border border-muted shadow-2xl"
         >
+          {/* Contenido del formulario... */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-            {/* --- COLUMNA 1: Personal Information --- */}
             <div className="space-y-4">
               <h3 className="font-black text-xl uppercase italic border-b border-muted pb-2 text-primary">
                 1. Personal Info
@@ -168,7 +174,6 @@ export function RegistrationForm() {
               </div>
             </div>
 
-            {/* --- COLUMNA 2: Trip Details --- */}
             <div className="space-y-4">
               <h3 className="font-black text-xl uppercase italic border-b border-muted pb-2 text-primary">
                 2. Trip Details
@@ -198,6 +203,7 @@ export function RegistrationForm() {
                   </SelectContent>
                 </Select>
               </div>
+              {/* ... Resto de los selects de Trip Details ... */}
               <div>
                 <Label>Number of Travelers *</Label>
                 <Select required>
@@ -237,16 +243,12 @@ export function RegistrationForm() {
             </div>
           </div>
 
-          {/* --- EXPERIENCIAS --- */}
           <div className="mb-8 p-6 bg-background/50 rounded-3xl border border-muted/50">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
               <div>
                 <Label className="text-foreground block font-black text-xl uppercase italic">
                   3. Select Experiences
                 </Label>
-                <p className="text-xs text-muted-foreground mt-1">
-                  Based on your selected package
-                </p>
               </div>
               {selectedPackage && (
                 <span
@@ -274,7 +276,6 @@ export function RegistrationForm() {
                 const isSelected = selectedExperiences.includes(exp);
                 const isMaxed =
                   selectedExperiences.length >= currentLimit && !isSelected;
-
                 return (
                   <div
                     key={exp}
