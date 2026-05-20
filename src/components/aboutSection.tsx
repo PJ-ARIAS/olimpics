@@ -46,19 +46,19 @@ export function AboutSection() {
             About us
           </span>
           <h3 className="text-2xl sm:text-3xl font-extrabold text-foreground mt-2 mb-4 uppercase italic">
-            Local LGBTQ+ Mediterranean Lifestyle Hosts
+            THE BEST OF VALENCIA
           </h3>
-          <p className="text-base text-muted-foreground max-w-3xl mx-auto">
+          {/* <p className="text-base text-muted-foreground max-w-3xl mx-auto">
             At The Best of Valencia, we are more than a travel agency. We are a
             local incoming travel and lifestyle agency based in Valencia&apos;s
             historic center.
-          </p>
+          </p> */}
         </div>
         {/* ======================================================= */}
         {/* MEET OUR TEAM SECTION                                  */}
         {/* ======================================================= */}
         <div className="max-w-7xl mx-auto px-4 mb-24">
-          <p className="text-center text-[10px] font-black uppercase tracking-[0.3em] text-primary mb-12">
+          <p className="text-center text-[15px] font-black uppercase tracking-[0.3em] text-muted mb-12">
             Meet Our Team
           </p>
 

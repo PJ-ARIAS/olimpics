@@ -259,8 +259,8 @@ export function PackagesSection() {
               "Boutique hotels",
               "4* hotels",
               "5* premium hotels",
-              "Apartments",
-              "LGBTQ+ friendly",
+              "Apartments LGBTQ+ friendly",
+              "Average rates during Gay Games",
             ].map((type) => (
               <div
                 key={type}

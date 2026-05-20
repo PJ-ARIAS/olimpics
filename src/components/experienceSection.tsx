@@ -184,12 +184,6 @@ export function ExperiencesSection() {
           <h2 className="text-4xl md:text-5xl font-black text-foreground mt-2 mb-4 uppercase italic">
             Mediterranean Lifestyle
           </h2>
-          <div className="flex items-center justify-center gap-2 text-muted-foreground animate-bounce mt-4">
-            <MousePointer2 size={16} className="text-muted" />
-            <p className="text-[12px] font-black uppercase tracking-[0.2em]">
-              Hover to explore
-            </p>
-          </div>
         </div>
 
         {/* MOBILE CAROUSEL */}

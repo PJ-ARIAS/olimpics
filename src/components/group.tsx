@@ -37,6 +37,9 @@ export function Group() {
             <h3 className="text-3xl md:text-4xl lg:text-5xl font-black leading-tight mb-6 uppercase italic text-muted">
               {groupData.title}
             </h3>
+            <h4 className="text-muted  text-3xl mb-5 font-bold">
+              Group Travel & Custom Hospitality
+            </h4>
 
             <p className="text-base md:text-xl italic mb-8 leading-relaxed text-foreground">
               {groupData.description}

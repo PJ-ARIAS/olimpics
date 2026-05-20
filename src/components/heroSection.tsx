@@ -39,9 +39,10 @@ export function HeroSection() {
             </h1>
 
             <p className="text-lg opacity-90 max-w-lg leading-relaxed">
-              Spend your free time during the Games with locals. Experience
-              Valencia with a local LGBTQ+ friendly team based in the heart of
-              the city.
+              Discover Valencia beyond the games with authentic locals and
+              LGBTIQ+ frinedly experiences designed to helop you live the city
+              in a different way. Choose your experiences, create your own
+              package and enjoy Valencia like a true insider.
             </p>
 
             {/* BOTONES ESTILO PILL (CÁPSULA) */}
