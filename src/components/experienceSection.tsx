@@ -99,7 +99,7 @@ export function ExperiencesSection() {
       icon: Car,
       image: tuk,
       description:
-        "Discover Valencia aboard our fun tuk tuk experience. One of the easiest and most enjoyable ways to explore the city, iconic landmarks, and hidden local corners.",
+        "Together, we will discover Valencia aboard our fun tuk tuk experience, one of the easiest and most enjoyable ways to explore the city and its most important neighborhoods. We will visit vibrant areas, Mediterranean lifestyle spots, iconic landmarks, and hidden local corners together with our local hosts in a relaxed and social atmosphere.",
       highlight: "Private groups",
     },
     {
@@ -117,7 +117,7 @@ export function ExperiencesSection() {
       icon: Utensils,
       image: night,
       description:
-        "Discover the nightlife of Cabañal, the historic fishermen’s neighborhood. Enjoy tapas, local bars, and Mediterranean atmosphere in one of the trendiest areas.",
+        "Together, we will discover the nightlife atmosphere of Cabañal, Valencia’s historic fishermen’s neighborhood and one of the trendiest areas in the city today. We will enjoy tapas, local bars, Mediterranean atmosphere, and hidden local spots before finishing the evening in one of our favorite LGBTQ+ friendly venues in the city.",
       highlight: "Dinner included",
     },
   ];

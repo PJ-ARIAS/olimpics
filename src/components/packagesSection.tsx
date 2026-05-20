@@ -188,16 +188,22 @@ export function PackagesSection() {
               </span>
 
               <h3 className="text-3xl md:text-4xl font-black text-foreground mb-4 uppercase italic leading-[0.9] tracking-tight">
-                Dénia & Xàbia <br />
-                <span className="text-muted">Mediterranean Experience</span>
+                Xàbia Mediterranean
+                <br />
+                <span className="text-muted">July 6th</span>
               </h3>
 
               <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-8 text-pretty">
-                Full Day. Together, we will travel to Cala Clemence in Portitxol
+                Full Day.Together, we will travel to Cala Clemence in Portitxol
                 (Xàbia), one of the most spectacular Mediterranean spots on our
-                coast. Crystal-clear waters, breathtaking landscapes, and sunset
-                DJ sessions in a spectacular cliffside restaurant.
-                <span className="block mt-2 font-semibold text-foreground">
+                coast. Crystal-clear waters, breathtaking landscapes,
+                Mediterranean atmosphere, music, and sunset DJ sessions in a
+                spectacular cliffside restaurant overlooking the sea make this
+                the perfect escape from Valencia to discover another side of the
+                Mediterranean lifestyle. Includes: Local host. Transportation
+                (approx. 1h30 round trip) Paella lunch with sangría. One of
+                those places you simply never forget.
+                <span className="block mt-2 font-semibold text-muted">
                   Includes: Local host, Transportation, Paella lunch & Sangría.
                 </span>
               </p>
