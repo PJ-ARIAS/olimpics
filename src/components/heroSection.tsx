@@ -8,7 +8,7 @@ import {
   // MapPinned,
   CheckCircle2, // Cambiado para el icono de los botones según la imagen
 } from "lucide-react";
-import back from "../../images/herosectionfinalarreglado.webp";
+import back from "../../images/herosectoinfit.webp";
 import backMobile from "../../images/herosectionlast.webp";
 
 export function HeroSection() {

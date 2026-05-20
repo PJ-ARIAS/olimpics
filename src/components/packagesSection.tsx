@@ -16,8 +16,8 @@ export function PackagesSection() {
   ];
   const packages = [
     {
-      name: "Package A",
-      subtitle: "Basic Experience Package",
+      name: "Basic",
+      subtitle: "3 experiences package",
       price: "950€",
       experiences: 2,
       description: "Basic entry to the Mediterranean lifestyle",
@@ -30,8 +30,8 @@ export function PackagesSection() {
       popular: false,
     },
     {
-      name: "Package B",
-      subtitle: "Mediterranean Experience Package",
+      name: "Premium",
+      subtitle: "Premium package 4 experiences",
       price: "1,200€",
       experiences: 3,
       description: "The most balanced local experience",
@@ -45,14 +45,14 @@ export function PackagesSection() {
       popular: true,
     },
     {
-      name: "Package C",
-      subtitle: "Full Gay Games Experience",
+      name: "Full package",
+      subtitle: "Full package 5 experiences",
       price: "1,500€",
-      experiences: 4,
+      experiences: 3,
       description: "The ultimate immersion in Valencia",
       features: [
         "Choose Valencia Historic & Lifestyle tour or Bike tour",
-        "Choose 4 additional experiences",
+        "Choose 3 experiences in Valencia plus Premium Xàbia Day Trip.",
         "Meeting point, local host and guidance",
         "Restaurant booking service",
       ],
