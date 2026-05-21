@@ -66,7 +66,7 @@ export function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-3 text-muted-foreground">
                 <MapPin className="w-5 h-5 text-muted flex-shrink-0 mt-0.5" />
-                <span>El Carmen Historic Center, Valencia, Spain</span>
+                <span>Calle Zapateros 13, 46003</span>
               </li>
               <li className="flex items-center gap-3 text-muted-foreground">
                 <Mail className="w-5 h-5 text-muted flex-shrink-0" />
