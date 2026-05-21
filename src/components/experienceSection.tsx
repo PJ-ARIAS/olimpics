@@ -233,7 +233,7 @@ export function ExperiencesSection() {
           />
           <ExperienceCard
             exp={experiences[4]}
-            className="md:col-span-1 md:row-span-1"
+            className="md:col-span-1 md:row-span-1 h-73"
           />
           <ExperienceCard
             exp={experiences[5]}
