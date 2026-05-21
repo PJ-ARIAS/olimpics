@@ -1,5 +1,5 @@
 import { MapPin, Mail } from "lucide-react";
-import logo from "../../images/logo1.png";
+import logo from "../../public/logo1.png";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
