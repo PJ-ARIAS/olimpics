@@ -63,34 +63,34 @@ export function ExperiencesSection() {
       icon: Sun,
       image: gbeach,
       description:
-        "Together, we will escape to Valencia’s gay beach located just 20 minutes from the city center. Includes: Local hosts, Transfers, Restaurant lunch and afternoon vibes with plenty of new friends.",
+        "Together, we will escape to Valencia’s gay beach located just 20 minutes from the city center. Before heading to the beach, we will enjoy lunch together in a local restaurant  close to the beach  and then spend the afternoon surrounded by good vibes, Mediterranean atmosphere, and plenty of new friends.  Includes: Local hosts Transfers Restaurant lunch",
       highlight: "Transfers included",
     },
     {
       title: "Tapas & Wine",
-      duration: "3 Hours",
+      duration: "4 Hours",
       icon: Wine,
       image: tapas,
       description:
-        "Together, we will discover Valencia through tapas, wine, and Mediterranean lifestyle while visiting hidden spots around the Central Market area and El Carmen neighborhood.",
+        "Together, we will discover Valencia through tapas, wine, local atmosphere, and Mediterranean lifestyle while visiting hidden spots around the Central Market area, finishing the experience in one of our favorite LGBTQ+ friendly venues in El Carmen neighborhood.",
       highlight: "3 local venues",
     },
     {
       title: "LGBTQ+ Pub Crawl",
-      duration: "5 Hours",
+      duration: "4 Hours",
       icon: Moon,
       image: gpub,
       description:
-        "Together, we will discover Valencia’s best LGBTQ+ nightlife areas in Ruzafa and El Carmen. A social nightlife experience with local friends. Optional: Disco entrance (+€50).",
+        "Together, we will discover Valencia’s best LGBTQ+ nightlife areas in Ruzafa and El Carmen alongside local hosts, exploring bars, hidden spots, and the city’s authentic nightlife atmosphere during the Gay Games. More than a pub crawl, this is a social local nightlife experience with local friends. Optional Add-On: Late-night disco entrance after 1 AM (+€50)",
       highlight: "+ 50€ disco entrance",
     },
     {
       title: "Bike Experience",
-      duration: "4 Hours",
+      duration: "3.5 Hours",
       icon: Bike,
       image: bike,
       description:
-        "Together, we will bike from Valencia’s historic center to the beach while discovering Mediterranean neighborhoods, City of Arts and Sciences, and the authentic lifestyle.",
+        "Together, we will bike from Valencia’s historic center to the beach while discovering Mediterranean neighborhoods, hidden local spots, the City of Arts and Sciences, and the authentic lifestyle of the city with our friendly local guide.",
       highlight: "Scenic route",
     },
     {
@@ -108,7 +108,7 @@ export function ExperiencesSection() {
       icon: Sailboat,
       image: cata,
       description:
-        "Together, we will sail along Valencia’s coastline during sunset while enjoying music, drinks, sea breeze, and Mediterranean atmosphere. A true iconic experience.",
+        "Together, we will sail along Valencia’s coastline during sunset while enjoying music, drinks, sea breeze, and Mediterranean atmosphere. We will relax, socialize, take photos, and enjoy one of the most iconic experiences in Valencia. A true Mediterranean sunset experience during the Gay Games. We will have 2 exits during the games.",
       highlight: "Drinks included",
     },
     {
