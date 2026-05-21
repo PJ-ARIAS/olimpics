@@ -12,6 +12,7 @@ export function Header() {
     { label: "Experiences", href: "#experiences" },
     { label: "Contact", href: "#contact" },
     { label: "Gallery", href: "#gallery" },
+    { label: "Groups", href: "#groups" },
   ];
 
   return (
