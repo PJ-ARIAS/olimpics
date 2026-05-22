@@ -87,7 +87,7 @@ export function Footer() {
             {currentYear} The Best of Valencia. All rights reserved.
           </p>
           <p className="text-sm text-muted-foreground">
-            Experience Valencia like a local during the Gay Games
+            Experience Valencia like a local during the Gay Games 2026
           </p>
         </div>
       </div>
