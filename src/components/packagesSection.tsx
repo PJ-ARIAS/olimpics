@@ -212,7 +212,7 @@ export function PackagesSection() {
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 mt-auto">
                 <div className="flex items-baseline gap-2">
                   <span className="text-4xl font-bold text-foreground">
-                    From 400€
+                    From 500€
                   </span>
                   <span className="text-muted-foreground text-sm font-medium">
                     per person
