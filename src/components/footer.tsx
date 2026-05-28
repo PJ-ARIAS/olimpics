@@ -1,4 +1,4 @@
-import { MapPin, Mail } from "lucide-react";
+import { MapPin, Mail, Headset } from "lucide-react";
 import logo from "../../public/logo1.png";
 
 export function Footer() {
@@ -77,6 +77,17 @@ export function Footer() {
                   info@thebestofvalencia.com
                 </a>
               </li>
+              <li className="flex items-center gap-3 text-muted-foreground">
+                <Headset className="w-5 h-5 text-muted flex-shrink-0" />
+                <a
+                  href="https://wa.me/609758014?text=Hola,%20estoy%20interesado%20en%20los%20servicios%20de%20Valencia%20Gay%20Travel"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Contact us by WhatsApp
+                </a>
+              </li>
+              <li></li>
             </ul>
           </div>
         </div>
